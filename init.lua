@@ -4,5 +4,7 @@ vim.g.maplocalleader = ' '
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+require('config.lazy')
+
 vim.keymap.set('n', '<Leader>x', '<CMD>.lua<CR>')
 vim.keymap.set('n', '<Leader><Leader>x', '<CMD>source %<CR>')
