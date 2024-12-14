@@ -1,5 +1,9 @@
 return {
   {
+    'sphamba/smear-cursor.nvim',
+    config = {},
+  },
+  {
     'echasnovski/mini.files',
     lazy = false, -- To use as default directory browser
     keys = {
