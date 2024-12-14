@@ -11,6 +11,8 @@ return {
       -- U = require 'catppuccin.utils.colors'
       return {
         LineNr = { fg = colors.overlay2 },
+        LineNrAbove = { fg = colors.overlay0 },
+        LineNrBelow = { fg = colors.overlay0 },
         NonText = { fg = colors.mantle, bg = colors.text },
         MiniTrailspace = { fg = colors.surface0, bg = colors.red },
         MiniStatuslineInactive = { fg = colors.overlay2 },
