@@ -28,20 +28,7 @@ return {
       command = 'google',
       output = 'replace',
     },
+    parse_before = 'no_handle',
     silent = true,
-    preset = {
-      parse_before = {
-        natural = {
-          lang_abbr = {
-            en = 'english',
-            de = 'english',
-            fr = 'english',
-          },
-          end_marks = {
-            english = { '.', '?', '!', ':', ';' },
-          },
-        },
-      },
-    },
   },
 }
