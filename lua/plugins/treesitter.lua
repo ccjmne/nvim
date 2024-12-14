@@ -1,11 +1,12 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  event = 'VeryLazy',
+  event = { 'BufReadPre', 'BufNewFile' },
   build = ':TSUpdate',
   config = function()
-    require'nvim-treesitter.configs'.setup {
-      ensure_installed = { "lua", "vim", "vimdoc", "markdown", "javascript", "typescript", "java" },
-      auto_install = false,
+    ---@diagnostic disable-next-line: missing-fields
+    require 'nvim-treesitter.configs'.setup {
+      ensure_installed = { 'lua', 'vim', 'vimdoc', 'markdown', 'javascript', 'typescript', 'java', 'query' },
+      auto_install = true,
       highlight = {
         enable = true,
         disable = function(lang, buf)
