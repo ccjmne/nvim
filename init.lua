@@ -16,6 +16,3 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', precedes = '<', e
 
 require('config.utils')
 require('config.lazy')
-
-vim.keymap.set('n', '<Leader>x', '<CMD>.lua<CR>')
-vim.keymap.set('n', '<Leader><Leader>x', '<CMD>source %<CR>')
