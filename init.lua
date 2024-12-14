@@ -6,6 +6,12 @@ vim.opt.relativenumber = true
 
 vim.opt.undofile = true
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', precedes = '<', extends = '>' }
+
 require('config.utils')
 require('config.lazy')
 
