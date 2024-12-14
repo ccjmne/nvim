@@ -15,8 +15,8 @@ return {
           delay = 0,
           chars = { right_arrow = '─' },
           style = {
-            '#806d9c',
-            '#c21f30',
+            vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('LineNrAbove')), 'fg', 'gui'),
+            vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('Error')), 'fg', 'gui'),
           },
         },
         indent = {

@@ -15,6 +15,7 @@ return {
         LineNrBelow = { fg = colors.overlay0 },
         NonText = { fg = colors.mantle, bg = colors.text },
         ExtraWhitespace = { fg = colors.surface0, bg = colors.red },
+        Whitespace = { fg = colors.surface0 },
         MiniStatuslineInactive = { fg = colors.overlay2 },
         TelescopeBorder = { fg = colors.surface0 },
         TelescopeMultiSelection = { fg = colors.yellow },
