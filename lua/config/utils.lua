@@ -5,3 +5,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.keymap.set('n', '<Leader>x', '<CMD>.lua<CR>')
 vim.keymap.set('n', '<Leader><Leader>x', '<CMD>source %<CR>')
+vim.keymap.set('v', '<Leader>x', ':lua<CR>')
