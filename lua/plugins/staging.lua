@@ -1,7 +1,10 @@
 return {
   {
     'sphamba/smear-cursor.nvim',
-    config = {},
+    config = {
+      smear_between_neighbor_lines = false,
+      legacy_computing_symbols_support = true,
+    },
   },
   {
     'echasnovski/mini.files',
