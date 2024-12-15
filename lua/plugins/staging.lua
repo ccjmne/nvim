@@ -21,7 +21,11 @@ return {
     'echasnovski/mini.files',
     lazy = false, -- To use as default directory browser
     keys = {
-      { '-', '<CMD>lua MiniFiles.open()<CR>', 'Open mini.files' }
+      {
+        '-',
+        function() MiniFiles.open(vim.bo.buftype == '' and vim.api.nvim_buf_get_name(0) or nil) end,
+        'Open mini.files',
+      },
     },
     config = function()
       local MiniFiles = require('mini.files')
