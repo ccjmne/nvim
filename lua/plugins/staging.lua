@@ -1,9 +1,8 @@
 return {
   {
-    'aaronik/treewalker.nvim',
-    opts = {
-      highlight = true
-    },
+    -- 'aaronik/treewalker.nvim',
+    'ccjmne/treewalker.nvim',
+    opts = { highlight = 50 },
     keys = {
       { '<C-j>', ':Treewalker Down<CR>' },
       { '<C-k>', ':Treewalker Up<CR>' },
