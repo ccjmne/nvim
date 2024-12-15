@@ -14,6 +14,14 @@ return {
   {
     'tpope/vim-fugitive',
     event = 'VeryLazy',
+    config = function()
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'fugitiveblame' },
+        callback = function()
+          vim.keymap.set('n', 'q', '<CMD>q<CR>', { buffer = 0 })
+        end,
+      })
+    end,
   },
   {
     'rbong/vim-flog',
@@ -24,4 +32,3 @@ return {
     end
   },
 }
-

@@ -10,11 +10,5 @@ return {
     vim.g.undotree_HelpLine = 0
     vim.g.undotree_DiffCommand = 'git diff --no-index'
     vim.g.undotree_SplitWidth = 30
-    vim.api.nvim_create_autocmd('FileType', {
-      pattern = { 'undotree' },
-      callback = function()
-        vim.keymap.set('n', 'gq', '<CMD>UndotreeToggle<CR>', { buffer = 0 })
-      end,
-    })
   end,
 }

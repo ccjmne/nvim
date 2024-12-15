@@ -33,10 +33,7 @@ return {
       local function show_all() return true end
       local function show_visible(fs_entry) return not vim.startswith(fs_entry.name, '.') end
       local filter = show_visible
-      MiniFiles.setup {
-        mappings = { close = 'gq' },
-        content = { filter = filter },
-      }
+      MiniFiles.setup { content = { filter = filter } }
 
       local toggle_dotfiles = function()
         filter = filter == show_visible and show_all or show_visible
