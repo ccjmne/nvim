@@ -11,6 +11,7 @@ vim.opt.wrap = false
 vim.opt.signcolumn = 'yes'
 
 vim.opt.undofile = true
+vim.opt.updatetime = 320
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
