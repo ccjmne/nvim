@@ -10,13 +10,13 @@ return {
       { '<C-l>', ':Treewalker Right<CR>' },
     }
   },
-  {
-    'sphamba/smear-cursor.nvim',
-    config = {
-      smear_between_neighbor_lines = false,
-      legacy_computing_symbols_support = true,
-    },
-  },
+  -- {
+  --   'sphamba/smear-cursor.nvim',
+  --   opts = {
+  --     smear_between_neighbor_lines = false,
+  --     legacy_computing_symbols_support = true,
+  --   },
+  -- },
   {
     'echasnovski/mini.files',
     lazy = false, -- To use as default directory browser
