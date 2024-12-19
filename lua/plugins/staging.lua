@@ -22,7 +22,7 @@ return {
     keys = {
       {
         '-',
-        function() MiniFiles.open(vim.bo.buftype == '' and vim.api.nvim_buf_get_name(0) or nil) end,
+        function() MiniFiles.open(vim.fn.filereadable(vim.api.nvim_buf_get_name(0)) == 1 and vim.api.nvim_buf_get_name(0) or nil) end,
         'Open mini.files',
       },
     },
