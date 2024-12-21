@@ -25,8 +25,8 @@ return {
   {
     'Wansmer/treesj',
     keys = {
-      { 'gS', '<Cmd>TSJSplit<CR>', desc = 'Split TSNode' },
-      { 'gJ', '<Cmd>TSJJoin<CR>', desc = 'Join TSNode' },
+      { 'gS', '<CMD>TSJSplit<CR>', desc = 'Split TSNode' },
+      { 'gJ', '<CMD>TSJJoin<CR>',  desc = 'Join TSNode' },
     },
     opts = { use_default_keymaps = false, max_join_length = 150 },
   },
