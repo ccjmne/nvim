@@ -23,7 +23,7 @@ return {
     end
     return keys
   end,
-  config = {
+  opts = {
     default = {
       command = 'google',
       output = 'replace',

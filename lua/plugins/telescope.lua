@@ -13,7 +13,7 @@ return {
 
     { 'nvim-telescope/telescope-ui-select.nvim' },
 
-    { 'echasnovski/mini.icons', version = false, config = { style = 'ascii' } },
+    { 'echasnovski/mini.icons', version = false, opts = { style = 'ascii' } },
   },
   config = function()
     require 'telescope' .setup {
