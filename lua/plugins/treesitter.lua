@@ -20,7 +20,13 @@ return {
           additional_vim_regex_highlighting = false,
         },
       }
-    end
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'query' },
+        callback = function()
+          vim.keymap.set('n', 'q', '<CMD>q<CR>', { buffer = 0 })
+        end,
+      })
+    end,
   },
   {
     'Wansmer/treesj',
