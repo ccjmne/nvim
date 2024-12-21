@@ -18,7 +18,8 @@ return {
       vim.api.nvim_create_autocmd('FileType', {
         pattern = { 'fugitiveblame' },
         callback = function()
-          vim.keymap.set('n', 'q', '<CMD>q<CR>', { buffer = 0 })
+          -- gq, unlike <CMD>q<CR>, jumps back to the current work-tree version
+          vim.keymap.set('n', 'q', 'gq', { buffer = 0, remap = true })
         end,
       })
     end,
