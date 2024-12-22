@@ -33,7 +33,11 @@ return {
     { '<Leader>fl', function() require 'fzf-lua'.loclist {} end,                                      desc = 'Browse loclist' },
   },
   config = function()
-    -- require 'fzf-lua'.setup { '' }
+    require 'fzf-lua'.setup {
+      previewers = {
+        builtin = { syntax_limit_b = 1024 * 100 },
+      },
+    }
     -- TODO: If I'm going to do that, I'll have to also boot up fzf-lua on anything and everything that would trigger a ui-select.
     require 'fzf-lua'.register_ui_select()
   end
