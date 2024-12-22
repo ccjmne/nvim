@@ -19,7 +19,7 @@ return {
   },
   {
     'tpope/vim-fugitive',
-    event = 'VeryLazy',
+    cmd = { 'G' }, -- TODO: Set up Gvdiff, etc...
     config = function()
       vim.api.nvim_create_autocmd('FileType', {
         pattern = { 'fugitiveblame' },
