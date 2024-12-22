@@ -1,1 +1,4 @@
-return { 'tpope/vim-sleuth' }
+return {
+  { 'qpkorr/vim-bufkill' },
+  { 'tpope/vim-sleuth' },
+}
