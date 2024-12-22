@@ -6,7 +6,7 @@ return {
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require 'nvim-treesitter.configs'.setup {
-        ensure_installed = { 'lua', 'vim', 'vimdoc', 'markdown', 'javascript', 'typescript', 'java', 'query' },
+        ensure_installed = { 'lua', 'vim', 'vimdoc', 'markdown', 'javascript', 'typescript', 'java', 'query', 'diff', 'gitcommit', 'git_rebase' },
         auto_install = true,
         highlight = {
           enable = true,
