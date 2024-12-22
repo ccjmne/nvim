@@ -7,6 +7,12 @@ return {
       MiniDiff.setup {
         options = { algorithm = 'myers' },
         source = MiniDiff.gen_source.git(),
+        mappings = {
+          goto_first = '[C',
+          goto_prev = '[c',
+          goto_next = ']c',
+          goto_last = ']C',
+        },
       }
       vim.keymap.set('n', '<Leader>td', MiniDiff.toggle_overlay, { desc = 'MiniDiff: Toggle Overlay' })
     end,
