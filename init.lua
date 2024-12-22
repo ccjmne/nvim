@@ -12,8 +12,6 @@ vim.opt.signcolumn = 'yes'
 
 vim.opt.undofile = true
 vim.opt.updatetime = 320
-vim.opt.backup = true
-vim.opt.backupcopy = 'auto'
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
