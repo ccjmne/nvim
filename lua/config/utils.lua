@@ -44,14 +44,22 @@ vim.api.nvim_create_user_command('Title', function(opts)
 end, { range = true, nargs = '?', bang = true })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'help' },
+  pattern = { 'help', 'gf' },
   callback = function()
     -- TODO: Consider mapping to :bd or :BD, along with other :q mappings
     vim.keymap.set('n', 'q', '<CMD>q<CR>', { buffer = 0 })
   end,
 })
 
-vim.keymap.set('n', '<Leader>tt', function ()
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = vim.api.nvim_create_augroup('term-open', { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+  end,
+})
+
+vim.keymap.set({ 'n', 't' }, '<Leader>tt', function ()
   vim.cmd('new')
   vim.cmd('wincmd J')
   vim.cmd('term')
