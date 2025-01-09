@@ -9,6 +9,7 @@ return {
       { '<C-l>', ':Treewalker Right<CR>' },
     }
   },
+  { 'github/copilot.vim' },
   -- {
   --   'sphamba/smear-cursor.nvim',
   --   opts = {
