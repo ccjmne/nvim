@@ -21,6 +21,7 @@ return {
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+      'saghen/blink.cmp',
       {
         'folke/lazydev.nvim',
         ft = 'lua',
@@ -34,9 +35,10 @@ return {
     config = function()
       require 'mason'.setup {}
       require 'mason-lspconfig'.setup()
-      require 'lspconfig'.lua_ls.setup {}
-      require 'lspconfig'.ts_ls.setup {}
-      require 'lspconfig'.rust_analyzer.setup {}
+      local capabilities = require 'blink.cmp'.get_lsp_capabilities()
+      require 'lspconfig'.lua_ls.setup { capabilities = capabilities }
+      require 'lspconfig'.ts_ls.setup { capabilities = capabilities }
+      require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
     end
   },
 }
