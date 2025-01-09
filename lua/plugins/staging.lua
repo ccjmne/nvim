@@ -17,6 +17,14 @@ return {
   --     legacy_computing_symbols_support = true,
   --   },
   -- },
+  -- {
+  --   'rcarriga/nvim-notify',
+  --   config = function()
+  --     local Notify = require 'notify'
+  --     Notify.setup { render = 'minimal', merge_duplicates = true, stages = 'static' }
+  --     vim.notify = Notify
+  --   end,
+  -- },
   {
     'echasnovski/mini.files',
     lazy = false, -- To use as default directory browser
