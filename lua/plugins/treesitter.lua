@@ -28,6 +28,6 @@ return {
       { 'gS', '<CMD>TSJSplit<CR>', desc = 'Split TSNode' },
       { 'gJ', '<CMD>TSJJoin<CR>',  desc = 'Join TSNode' },
     },
-    opts = { use_default_keymaps = false, max_join_length = 150 },
+    opts = { use_default_keymaps = false, max_join_length = 500 },
   },
 }
