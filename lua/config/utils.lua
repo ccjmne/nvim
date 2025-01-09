@@ -17,7 +17,7 @@ vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix e
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickfix entry' })
 
 vim.api.nvim_create_user_command('Title', function(opts)
-  local padchar = opts.fargs[1] or '='
+  local padchar = opts.fargs[1] or '-'
   local center = opts.bang -- Use `Title!` to center the title
   local lo, hi
   if opts.count == -1 then     -- Normal mode, see https://www.petergundel.de/neovim/lua/hack/2023/12/17/get-neovim-mode-when-executing-a-command.html
