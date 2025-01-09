@@ -9,7 +9,19 @@ return {
       { '<C-l>', ':Treewalker Right<CR>' },
     }
   },
-  { 'github/copilot.vim' },
+  {
+    'github/copilot.vim',
+    config = function()
+      local enabled = true
+      vim.keymap.set(
+        'n', '<Leader>tc', function()
+          enabled = not enabled
+          vim.cmd('Copilot ' .. (enabled and 'enable' or 'disable'))
+          vim.notify('Copilot ' .. (enabled and 'enabled' or 'disabled'))
+        end,
+        { desc = 'Toggle Copilot' })
+    end
+  },
   -- {
   --   'sphamba/smear-cursor.nvim',
   --   opts = {
