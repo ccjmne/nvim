@@ -22,6 +22,21 @@ return {
         { desc = 'Toggle Copilot' })
     end
   },
+  {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    dependencies = {
+      { 'github/copilot.vim' },                       -- or zbirenbaum/copilot.lua
+      { 'nvim-lua/plenary.nvim', branch = 'master' }, -- for curl, log and async functions
+    },
+    build = 'make tiktoken',                          -- Only on MacOS or Linux
+    config = function()
+      require 'CopilotChat'.setup {}
+      vim.api.nvim_create_autocmd('BufEnter', {
+        pattern = { 'copilot-chat' },
+        callback = function() vim.wo.wrap = true end,
+      })
+    end
+  },
   -- {
   --   'sphamba/smear-cursor.nvim',
   --   opts = {
