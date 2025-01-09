@@ -42,3 +42,11 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.keymap.set('n', 'q', '<CMD>q<CR>', { buffer = 0 })
   end,
 })
+
+vim.keymap.set('n', '<Leader>tt', function ()
+  vim.cmd('new')
+  vim.cmd('wincmd J')
+  vim.cmd('term')
+  vim.cmd('startinsert')
+  vim.api.nvim_win_set_height(0, 15)
+end)
