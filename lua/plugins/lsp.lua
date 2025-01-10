@@ -40,6 +40,7 @@ return {
       require 'lspconfig'.ts_ls.setup { capabilities = capabilities }
       require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
       require 'lspconfig'.svelte.setup { capabilities = capabilities }
+      require 'lspconfig'.glslls.setup { capabilities = capabilities }
     end
   },
 }
