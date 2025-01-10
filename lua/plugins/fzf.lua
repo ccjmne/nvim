@@ -27,6 +27,9 @@ return {
     -- Still though, why not support Lua out of the box? I must be missing something.
     { '<Leader>ft', function() require 'fzf-lua'.treesitter {} end,                                   desc = 'Find Treesitter symbols' },
 
+    { '<Leader>ds', function() require 'fzf-lua'.lsp_document_symbols {} end,                         desc = 'Find document symbols' },
+    { '<Leader>ws', function() require 'fzf-lua'.lsp_workspace_symbols {} end,                        desc = 'Find workspace symbols' },
+
     -- TODO: Finish figuring out how to set up quickfix and loclist from diagnostics without any hitches
     -- Figure out better. See https://github.com/lukas-reineke/dotfiles/blob/master/vim/lua/lists.lua and the supporting keymaps.lua
     -- Also consider https://github.com/kevinhwang91/nvim-bqf
