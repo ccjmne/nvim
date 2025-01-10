@@ -20,7 +20,6 @@ return {
   {
     'tpope/vim-fugitive',
     dependencies = { 'tpope/vim-rhubarb' },
-    cmd = { 'G' }, -- TODO: Set up Gvdiff, etc...
     config = function()
       vim.api.nvim_create_autocmd('FileType', {
         pattern = { 'git' },
