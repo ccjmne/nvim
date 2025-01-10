@@ -44,7 +44,7 @@ vim.api.nvim_create_user_command('Title', function(opts)
 end, { range = true, nargs = '?', bang = true })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'help', 'gf' },
+  pattern = { 'help', 'qf' },
   callback = function()
     -- TODO: Consider mapping to :bd or :BD, along with other :q mappings
     vim.keymap.set('n', 'q', '<CMD>q<CR>', { buffer = 0 })
