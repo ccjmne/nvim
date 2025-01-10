@@ -16,6 +16,16 @@ vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Set locati
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix entry' })
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickfix entry' })
 
+local bufs = vim.fn.argv()
+if #bufs > 1 then ---@cast bufs string[]
+  local qflist = {}
+  for _, name in ipairs(bufs) do
+    table.insert(qflist, { filename = name })
+  end
+  vim.fn.setqflist(qflist)
+  vim.cmd('copen')
+end
+
 vim.api.nvim_create_user_command('Title', function(opts)
   local padchar = opts.fargs[1] or '-'
   local center = opts.bang -- Use `Title!` to center the title
