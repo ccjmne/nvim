@@ -30,8 +30,8 @@ return {
     -- TODO: Finish figuring out how to set up quickfix and loclist from diagnostics without any hitches
     -- Figure out better. See https://github.com/lukas-reineke/dotfiles/blob/master/vim/lua/lists.lua and the supporting keymaps.lua
     -- Also consider https://github.com/kevinhwang91/nvim-bqf
-    { '<Leader>fc', function() require 'fzf-lua'.quickfix {} end,                                     desc = 'Browse quickfix' },
-    { '<Leader>fl', function() require 'fzf-lua'.loclist {} end,                                      desc = 'Browse loclist' },
+    { '<Leader>fq', function() require 'fzf-lua'.quickfix {} end,                                     desc = 'Find in qflist' },
+    { '<Leader>fl', function() require 'fzf-lua'.loclist {} end,                                      desc = 'Find in loclist' },
   },
   config = function()
     require 'fzf-lua'.setup {

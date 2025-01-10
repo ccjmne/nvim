@@ -10,8 +10,8 @@ vim.keymap.set('v', '<Leader>x', ':lua<CR>')
 vim.keymap.set('n', '<Esc>', '<CMD>nohlsearch<CR><CMD>cclose<CR><CMD>pclose<CR>', { desc = 'Clear search highlight, close preview/quickfix' })
 -- Figure out better. See https://github.com/lukas-reineke/dotfiles/blob/master/vim/lua/lists.lua
 -- Also consider https://github.com/kevinhwang91/nvim-bqf
-vim.keymap.set('n', '<Leader>c', vim.diagnostic.setqflist, { desc = 'Set quickfix list' })
-vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Set location list' })
+vim.keymap.set('n', '<Leader>q', vim.diagnostic.setqflist, { desc = 'Put diagnostics to qflist' })
+vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Put diagnostics to loclist' })
 
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix entry' })
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickfix entry' })
