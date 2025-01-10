@@ -10,7 +10,7 @@ vim.keymap.set('v', '<Leader>x', ':lua<CR>')
 vim.keymap.set('n', '<Esc>', '<CMD>nohlsearch<CR>')
 -- Figure out better. See https://github.com/lukas-reineke/dotfiles/blob/master/vim/lua/lists.lua
 -- Also consider https://github.com/kevinhwang91/nvim-bqf
-vim.keymap.set('n', '<Leader>q', vim.diagnostic.setqflist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<Leader>c', vim.diagnostic.setqflist, { desc = 'Set quickfix list' })
 vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix entry' })
