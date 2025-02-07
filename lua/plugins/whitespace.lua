@@ -18,6 +18,7 @@ return {
             vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('LineNrAbove')), 'fg', 'gui'),
             vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('Error')), 'fg', 'gui'),
           },
+          textobject = 'ic',
         },
         indent = {
           enable = true,
