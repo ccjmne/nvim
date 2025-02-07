@@ -8,6 +8,8 @@ vim.keymap.set('n', '<Leader><Leader>x', '<CMD>source %<CR>')
 vim.keymap.set('v', '<Leader>x', ':lua<CR>')
 
 vim.keymap.set('n', '<Esc>', '<CMD>nohlsearch<CR><CMD>cclose<CR><CMD>pclose<CR>', { desc = 'Clear search highlight, close preview/quickfix' })
+
+vim.diagnostic.config { virtual_text = true }
 -- Figure out better. See https://github.com/lukas-reineke/dotfiles/blob/master/vim/lua/lists.lua
 -- Also consider https://github.com/kevinhwang91/nvim-bqf
 vim.keymap.set('n', '<Leader>q', vim.diagnostic.setqflist, { desc = 'Put diagnostics to qflist' })
