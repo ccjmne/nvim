@@ -29,6 +29,7 @@ return {
     integrations = {
       dap = true,
       dap_ui = true,
+      gitgutter = true,
       mason = true,
       semantic_tokens = true,
       symbols_outline = true,

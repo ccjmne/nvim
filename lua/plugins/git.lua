@@ -1,20 +1,16 @@
 return {
   {
-    'echasnovski/mini.diff',
-    event = 'VeryLazy',
-    config = function()
-      local MiniDiff = require 'mini.diff'
-      MiniDiff.setup {
-        options = { algorithm = 'myers' },
-        source = MiniDiff.gen_source.git(),
-        mappings = {
-          goto_first = '[C',
-          goto_prev = '[c',
-          goto_next = ']c',
-          goto_last = ']C',
-        },
-      }
-      vim.keymap.set('n', '<Leader>td', MiniDiff.toggle_overlay, { desc = 'MiniDiff: Toggle Overlay' })
+    'airblade/vim-gitgutter',
+    lazy = false,
+    init = function()
+      vim.g.gitgutter_preview_win_floating = 0
+      vim.g.gitgutter_highlight_linenrs = 1
+      vim.g.gitgutter_signs = 0
+      vim.g.gitgutter_grep = 'rg'
+      vim.api.nvim_set_hl(0, 'GitGutterAddLineNr', { link = 'GitGutterAdd' })
+      vim.api.nvim_set_hl(0, 'GitGutterChangeLineNr', { link = 'GitGutterChange' })
+      vim.api.nvim_set_hl(0, 'GitGutterDeleteLineNr', { link = 'GitGutterDelete' })
+      vim.api.nvim_set_hl(0, 'GitGutterChangeDeleteLineNr', { link = 'GitGutterChangeDelete' })
     end,
   },
   {
