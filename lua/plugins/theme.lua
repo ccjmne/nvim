@@ -17,12 +17,6 @@ return {
         ExtraWhitespace = { fg = colors.surface0, bg = colors.red },
         Whitespace = { fg = colors.surface0 },
         MiniStatuslineInactive = { fg = colors.overlay2 },
-        TelescopeBorder = { fg = colors.surface0 },
-        TelescopeMultiSelection = { fg = colors.yellow },
-        TelescopePromptBorder = { fg = colors.surface2 },
-        TelescopePromptPrefix = { fg = colors.blue },
-        TelescopeSelectionCaret = { fg = colors.yellow, bg = colors.surface0 },
-        TelescopeTitle = { fg = colors.blue },
       }
     end,
     show_end_of_buffer = true,
@@ -33,7 +27,6 @@ return {
       mason = true,
       semantic_tokens = true,
       symbols_outline = true,
-      telescope = true,
     },
   },
 }
