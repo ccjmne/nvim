@@ -8,7 +8,7 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'auto:2-9'
 
 vim.opt.undofile = true
 vim.opt.updatetime = 320
