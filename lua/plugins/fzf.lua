@@ -18,7 +18,7 @@ return {
     { '<Leader>fw', function() require 'fzf-lua'.grep_cword {} end,                                   desc = 'Grep for word under cursor' },
     { '<Leader>fW', function() require 'fzf-lua'.grep_cWORD {} end,                                   desc = 'Grep for WORD under cursor' },
 
-    { '<Leader>fr', function() require 'fzf-lua'.resume {} end,                                       desc = 'Resume previous fzf search' },
+    { '<Leader>fr', function() require 'fzf-lua'.resume {} end,                                       desc = 'Resume search' },
     { '<Leader>f?', function() require 'fzf-lua'.builtin {} end,                                      desc = 'Find builtin fzf-lua command' },
     { '<Leader>fh', function() require 'fzf-lua'.helptags {} end,                                     desc = 'Find help tags' },
     { '<Leader>fk', function() require 'fzf-lua'.keymaps {} end,                                      desc = 'Find keymaps' },
