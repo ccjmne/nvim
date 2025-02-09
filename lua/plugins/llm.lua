@@ -27,6 +27,17 @@ return {
         mode = { 'n', 'v' },
         desc = 'CopilotChat - Prompt actions',
       },
+      {
+        '<leader>co',
+        function()
+          local input = vim.fn.input('Quick Chat: ')
+          if input ~= '' then
+            require('CopilotChat').ask(input, { selection = require('CopilotChat.select').buffer })
+          end
+        end,
+        mode = { 'n', 'v' },
+        desc = 'CopilotChat - Quick chat',
+      },
       { '<Leader>ct', '<CMD>CopilotChatToggle<CR>', mode = { 'n', 'v' }, { desc = 'Toggle Copilot Chat' } },
     },
     build = 'make tiktoken',
