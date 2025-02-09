@@ -25,35 +25,47 @@ return {
   --   end,
   -- },
   {
-    'echasnovski/mini.files',
-    lazy = false, -- To use as default directory browser
-    keys = {
-      {
-        '-',
-        function() MiniFiles.open(vim.fn.filereadable(vim.api.nvim_buf_get_name(0)) == 1 and vim.api.nvim_buf_get_name(0) or nil) end,
-        'Open mini.files',
-      },
-    },
+    'stevearc/oil.nvim',
     config = function()
-      local MiniFiles = require('mini.files')
+      local oil = require 'oil'
+      local columns = {
+        { name = 'icon',        enabled = true },
+        { name = 'permissions', enabled = false },
+        { name = 'size',        enabled = false },
+        { name = 'mtime',       enabled = false },
+      }
 
-      local function show_all() return true end
-      local function show_visible(fs_entry) return not vim.startswith(fs_entry.name, '.') end
-      local filter = show_visible
-      MiniFiles.setup { content = { filter = filter } }
-
-      local toggle_dotfiles = function()
-        filter = filter == show_visible and show_all or show_visible
-        MiniFiles.refresh { content = { filter = filter } }
-        MiniFiles.setup { content = { filter = filter } }
+      local function toggle_column(idx)
+        columns[idx].enabled = not columns[idx].enabled
+        local cols = {}
+        for _, column in ipairs(columns) do
+          if column.enabled then
+            table.insert(cols, column.name)
+          end
+        end
+        oil.set_columns(cols)
       end
 
-      vim.api.nvim_create_autocmd('User', {
-        pattern = 'MiniFilesBufferCreate',
-        callback = function(args)
-          vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = args.data.buf_id })
-        end,
-      })
+      oil.setup {
+        skip_confirm_for_simple_edits = true,
+        columns = { 'icon' },
+        keymaps = {
+          ['gq'] = 'actions.close',
+          ['gp'] = {
+            desc = 'Toggle permissions',
+            callback = function() toggle_column(2) end,
+          },
+          ['gs'] = {
+            desc = 'Toggle size',
+            callback = function() toggle_column(3) end,
+          },
+          ['gt'] = {
+            desc = 'Toggle last modified time',
+            callback = function() toggle_column(4) end,
+          },
+        },
+      }
+      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
     end,
   },
 }
