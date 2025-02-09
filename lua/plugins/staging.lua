@@ -29,7 +29,6 @@ return {
     config = function()
       local oil = require 'oil'
       local columns = {
-        { name = 'icon',        enabled = true },
         { name = 'permissions', enabled = false },
         { name = 'size',        enabled = false },
         { name = 'mtime',       enabled = false },
@@ -48,7 +47,7 @@ return {
 
       oil.setup {
         skip_confirm_for_simple_edits = true,
-        columns = { 'icon' },
+        columns = {},
         keymaps = {
           ['gq'] = 'actions.close',
           ['gp'] = {
