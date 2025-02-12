@@ -23,6 +23,7 @@ return {
     integrations = {
       dap = true,
       dap_ui = true,
+      fzf = true,
       gitgutter = true,
       mason = true,
       semantic_tokens = true,
