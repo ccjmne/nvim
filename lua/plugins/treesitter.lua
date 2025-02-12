@@ -17,7 +17,7 @@ return {
       vim.api.nvim_create_autocmd('FileType', {
         pattern = { 'query' },
         callback = function()
-          vim.keymap.set('n', 'q', '<CMD>q<CR>', { buffer = 0 })
+          vim.keymap.set('n', 'gq', '<CMD>q<CR>', { buffer = 0 })
         end,
       })
     end,
