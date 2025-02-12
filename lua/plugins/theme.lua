@@ -10,7 +10,7 @@ return {
       -- C = require('catppuccin.palettes').get_palette 'mocha'
       -- U = require 'catppuccin.utils.colors'
       return {
-        LineNr = { fg = colors.overlay2 },
+        LineNr = { fg = colors.overlay0 },
         LineNrAbove = { fg = colors.overlay0 },
         LineNrBelow = { fg = colors.overlay0 },
         NonText = { fg = colors.mantle, bg = colors.text },
