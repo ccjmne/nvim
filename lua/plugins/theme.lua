@@ -21,6 +21,7 @@ return {
     end,
     show_end_of_buffer = true,
     integrations = {
+      copilot_vim = true,
       dap = true,
       dap_ui = true,
       fzf = true,
