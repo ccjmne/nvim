@@ -52,15 +52,15 @@ return {
           ['gq'] = 'actions.close',
           ['gp'] = {
             desc = 'Toggle permissions',
-            callback = function() toggle_column(2) end,
+            callback = function() toggle_column(1) end,
           },
           ['gs'] = {
             desc = 'Toggle size',
-            callback = function() toggle_column(3) end,
+            callback = function() toggle_column(2) end,
           },
           ['gt'] = {
             desc = 'Toggle last modified time',
-            callback = function() toggle_column(4) end,
+            callback = function() toggle_column(3) end,
           },
         },
       }
