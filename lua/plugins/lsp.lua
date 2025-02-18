@@ -31,6 +31,7 @@ return {
           },
         },
       },
+      'nvim-java/nvim-java',
     },
     config = function()
       require 'mason'.setup {}
@@ -45,6 +46,8 @@ return {
         capabilities = capabilities,
         cmd = { 'glslls', '--stdin', '--target-env', 'opengl' },
       }
+      require 'java'.setup()
+      require 'lspconfig'.jdtls.setup { capabilities = capabilities }
     end
   },
 }
