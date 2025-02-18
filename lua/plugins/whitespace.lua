@@ -6,24 +6,21 @@ return {
     end,
   },
   {
-    'shellRaining/hlchunk.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
+    'echasnovski/mini.indentscope',
+    version = false,
     config = function()
-      require('hlchunk').setup {
-        chunk = {
-          enable = true,
+      local iscope = require 'mini.indentscope'
+      iscope.setup {
+        draw = {
           delay = 0,
-          chars = { right_arrow = '─' },
-          style = {
-            vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('LineNrAbove')), 'fg', 'gui'),
-            vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('Error')), 'fg', 'gui'),
-          },
-          textobject = 'ic',
+          animation = iscope.gen_animation.none(),
         },
-        indent = {
-          enable = true,
-        },
+        options = {
+          try_as_border = true,
+          border = 'both',
+          indent_at_cursor = false, },
+        symbol = '▏',
       }
-    end
+    end,
   },
 }
