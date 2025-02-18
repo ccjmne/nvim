@@ -18,6 +18,13 @@ vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Put diagno
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix entry' })
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickfix entry' })
 
+vim.keymap.set('n', '<Leader>fa', function()
+  require 'fzf-lua'.fzf_exec("git log -1000 --pretty='%aN <%aE>' | sort --unique", {
+    prompt = 'Find author> ',
+    actions = { ['default'] = function(selected) vim.api.nvim_put(selected, "c", true, true) end },
+  })
+end)
+
 local bufs = vim.fn.argv()
 if #bufs > 1 then ---@cast bufs string[]
   local qflist = {}
