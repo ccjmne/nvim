@@ -25,5 +25,7 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', precedes = '<', extends = '>' }
 
+vim.opt.laststatus = 0
+
 require('config.utils')
 require('config.lazy')
