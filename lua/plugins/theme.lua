@@ -26,9 +26,6 @@ return {
       dap_ui = true,
       fzf = true,
       gitgutter = true,
-      mason = true,
-      semantic_tokens = true,
-      symbols_outline = true,
     },
   },
 }
