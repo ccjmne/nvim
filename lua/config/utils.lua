@@ -19,7 +19,8 @@ vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix e
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickfix entry' })
 
 vim.keymap.set('n', '<Leader>fa', function()
-  require 'fzf-lua'.fzf_exec("git log -1000 --pretty='%aN <%aE>' | sort --unique", {
+  local gitdir = vim.fn.fnamemodify(vim.fn.finddir('.git', '.;'), ':p:h')
+  require 'fzf-lua'.fzf_exec("git --git-dir=" .. gitdir .. " log -1000 --pretty='%aN <%aE>' | sort --unique", {
     prompt = 'Find authors> ',
     fzf_opts = { ['--multi'] = true },
     preview = { field_index = '{+}', fn = function(s) return table.concat(s, '\n') end },
