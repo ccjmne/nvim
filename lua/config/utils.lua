@@ -21,10 +21,10 @@ vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickf
 vim.keymap.set('n', '<Leader>fa', function()
   local gitdir = vim.fn.fnamemodify(vim.fn.finddir('.git', '.;'), ':p:h')
   require 'fzf-lua'.fzf_exec("git --git-dir=" .. gitdir .. " log -1000 --pretty='%aN <%aE>' | sort --unique", {
-    prompt = 'Find authors> ',
+    prompt = 'Contributors> ',
     fzf_opts = { ['--multi'] = true },
     preview = { field_index = '{+}', fn = function(s) return table.concat(s, '\n') end },
-    actions = { ['default'] = function(selected) vim.api.nvim_put(selected, 'c', true, true) end },
+    actions = { ['default'] = function(s) vim.api.nvim_put(s, 'v', true, true) end },
   })
 end)
 
