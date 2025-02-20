@@ -20,7 +20,7 @@ vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickf
 
 vim.keymap.set('n', '<Leader>fa', function()
   local gitdir = vim.fn.fnamemodify(vim.fn.finddir('.git', '.;'), ':p:h')
-  require 'fzf-lua'.fzf_exec("git --git-dir=" .. gitdir .. " log -1000 --pretty='%aN <%aE>' | sort --unique", {
+  require 'fzf-lua'.fzf_exec("git --git-dir=" .. gitdir .. " log --pretty='%aN <%aE>' | awk '!M[$0]++'", {
     prompt = 'Contributors> ',
     fzf_opts = { ['--multi'] = true },
     preview = { field_index = '{+}', fn = function(s) return table.concat(s, '\n') end },
