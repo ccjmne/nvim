@@ -1,3 +1,11 @@
+vim.diagnostic.config({
+  float = { source = true },
+  severity_sort = true,
+  signs = true, -- gutter signs
+  underline = false,
+  update_in_insert = false,
+})
+
 return {
   {
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
