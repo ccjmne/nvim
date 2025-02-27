@@ -13,7 +13,6 @@ return {
         LineNr = { fg = colors.overlay0 },
         LineNrAbove = { fg = colors.overlay0 },
         LineNrBelow = { fg = colors.overlay0 },
-        NonText = { fg = colors.mantle, bg = colors.text },
         MiniIndentscopeSymbol = { fg = colors.overlay0 },
         ExtraWhitespace = { fg = colors.surface0, bg = colors.red },
         Whitespace = { fg = colors.surface0 },
