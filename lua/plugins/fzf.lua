@@ -35,6 +35,20 @@ return {
     -- Also consider https://github.com/kevinhwang91/nvim-bqf
     { '<Leader>fq', function() require 'fzf-lua'.quickfix {} end,                                     desc = 'Find in qflist' },
     { '<Leader>fl', function() require 'fzf-lua'.loclist {} end,                                      desc = 'Find in loclist' },
+
+    {
+      '<Leader>fa',
+      function()
+        local gitdir = vim.fn.fnamemodify(vim.fn.finddir('.git', '.;'), ':p:h')
+        require 'fzf-lua'.fzf_exec("git --git-dir=" .. gitdir .. " log --pretty='%aN <%aE>' --all | awk '!M[$0]++'", {
+          prompt = 'Contributors> ',
+          fzf_opts = { ['--multi'] = true },
+          preview = { field_index = '{+}', fn = function(s) return table.concat(s, '\n') end },
+          actions = { ['default'] = function(s) vim.api.nvim_put(s, 'v', true, true) end },
+        })
+      end,
+      desc = 'Find contributors'
+    },
   },
   config = function()
     require 'fzf-lua'.setup {

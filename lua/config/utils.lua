@@ -18,16 +18,6 @@ vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Put diagno
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix entry' })
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickfix entry' })
 
-vim.keymap.set('n', '<Leader>fa', function()
-  local gitdir = vim.fn.fnamemodify(vim.fn.finddir('.git', '.;'), ':p:h')
-  require 'fzf-lua'.fzf_exec("git --git-dir=" .. gitdir .. " log --pretty='%aN <%aE>' --all | awk '!M[$0]++'", {
-    prompt = 'Contributors> ',
-    fzf_opts = { ['--multi'] = true },
-    preview = { field_index = '{+}', fn = function(s) return table.concat(s, '\n') end },
-    actions = { ['default'] = function(s) vim.api.nvim_put(s, 'v', true, true) end },
-  })
-end)
-
 local bufs = vim.fn.argv()
 if #bufs > 1 then ---@cast bufs string[]
   local qflist = {}
