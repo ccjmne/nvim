@@ -1,17 +1,17 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt.timeoutlen = 320
-
 vim.opt.number = true
 vim.opt.relativenumber = false
+vim.opt.signcolumn = 'yes'
+
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
-vim.opt.signcolumn = 'yes'
 
 vim.opt.undofile = true
 vim.opt.updatetime = 160
+vim.opt.timeoutlen = 320
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
