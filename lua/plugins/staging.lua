@@ -1,14 +1,4 @@
 return {
-  {
-    'aaronik/treewalker.nvim',
-    opts = { highlight_duration = 50, highlight_group = 'CursorLine' },
-    keys = {
-      { '<C-j>', ':Treewalker Down<CR>' },
-      { '<C-k>', ':Treewalker Up<CR>' },
-      { '<C-h>', ':Treewalker Left<CR>' },
-      { '<C-l>', ':Treewalker Right<CR>' },
-    }
-  },
   -- {
   --   'sphamba/smear-cursor.nvim',
   --   opts = {
