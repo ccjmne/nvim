@@ -6,6 +6,7 @@ vim.opt.relativenumber = false
 vim.opt.signcolumn = 'yes'
 
 vim.opt.cursorline = true
+vim.opt.guicursor = ''
 vim.opt.scrolloff = 8
 vim.opt.wrap = false
 
