@@ -18,11 +18,11 @@ vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Put diagno
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix entry' })
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickfix entry' })
 
--- Keep cursor centred when moving vertically
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+-- Keep cursor centred when scrolling
+vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz')
+vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz')
+vim.keymap.set({ 'n', 'v' }, 'n', 'nzzzv')
+vim.keymap.set({ 'n', 'v' }, 'N', 'Nzzzv')
 
 local bufs = vim.fn.argv()
 if #bufs > 1 then ---@cast bufs string[]
