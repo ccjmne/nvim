@@ -15,8 +15,6 @@ vim.diagnostic.config { virtual_text = true }
 vim.keymap.set('n', '<Leader>q', vim.diagnostic.setqflist, { desc = 'Put diagnostics to qflist' })
 vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Put diagnostics to loclist' })
 
-vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Jump to next quickfix entry' })
-vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Jump to previous quickfix entry' })
 
 -- Keep cursor centred when scrolling
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz')
