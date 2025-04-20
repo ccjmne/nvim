@@ -13,6 +13,7 @@ vim.opt.wrap = false
 vim.opt.undofile = true
 vim.opt.updatetime = 160
 vim.opt.timeoutlen = 320
+vim.opt.grepprg = 'rg --vimgrep '
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
