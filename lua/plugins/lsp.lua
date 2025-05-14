@@ -18,7 +18,11 @@ return {
     },
     config = function()
       require 'mason'.setup {}
-      require 'mason-lspconfig'.setup()
+      require 'mason-lspconfig'.setup({
+        automatic_installation = { -- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#default-configuration
+          exclude = { 'lua_ls', 'ts_ls', 'rust_analyzer', 'tailwindcss', 'svelte', 'glslls' },
+        },
+      })
       local capabilities = require 'blink.cmp'.get_lsp_capabilities()
       require 'lspconfig'.ts_ls.setup { capabilities = capabilities }
       require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
