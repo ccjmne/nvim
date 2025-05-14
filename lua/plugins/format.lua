@@ -23,8 +23,8 @@ return {
     require 'conform'.setup({
       formatters_by_ft = {
         lua = { 'stylua', lsp_format = 'fallback' },
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
-        typescript = { 'prettierd', 'prettier', stop_after_first = true },
+        javascript = { 'eslint_d', 'eslint', 'prettier', stop_after_first = true },
+        typescript = { 'eslint_d', 'eslint', 'prettier', stop_after_first = true },
       },
       format_on_save = function()
         if vim.g.format_on_save then
