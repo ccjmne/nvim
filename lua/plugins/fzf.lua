@@ -52,6 +52,10 @@ return {
   },
   config = function()
     require 'fzf-lua'.setup {
+      'borderless',
+       -- TODO: Would be nice to have some difference in colouring
+       -- between the search and preview panels
+      fzf_colors = false,
       previewers = {
         builtin = { syntax_limit_b = 1024 * 100 },
       },
