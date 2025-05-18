@@ -19,7 +19,7 @@ return {
     config = function()
       require 'mason'.setup {}
       require 'mason-lspconfig'.setup({
-        automatic_installation = { -- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#default-configuration
+        automatic_enable = { -- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#default-configuration
           exclude = { 'lua_ls', 'ts_ls', 'rust_analyzer', 'tailwindcss', 'svelte', 'glslls' },
         },
       })
