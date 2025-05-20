@@ -8,7 +8,6 @@ return {
   keys = {
     { '<Leader>ff', function() require 'fzf-lua'.files {} end,                                        desc = 'Find in CWD' },
     { '<Leader>fn', function() require 'fzf-lua'.files { cwd = vim.fn.stdpath 'config' } end,         desc = 'Find in Neovim config' },
-    { '<Leader>fm', function() require 'fzf-lua'.files { cwd = vim.env.HOME .. '/git/dotfiles' } end, desc = 'Find in dotfiles' },
     { '<Leader>f,', function() require 'fzf-lua'.files { cwd = vim.env.HOME .. '/git/dotfiles2025' } end, desc = 'Find in new dotfiles' },
     { '<Leader> ',  function() require 'fzf-lua'.buffers {} end,                                      desc = 'Find buffers' },
     { '<Leader>-',  function() require 'fzf-lua'.oldfiles {} end,                                     desc = 'Find recent files' },
