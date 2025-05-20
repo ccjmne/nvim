@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end,
 })
 
+vim.api.nvim_set_hl(0, '@text.bold', { bold = true })
 return {
   'catppuccin/nvim',
   name = 'catppuccin',
@@ -29,6 +30,11 @@ return {
         ExtraWhitespace = { fg = colors.surface0, bg = colors.red },
         Whitespace = { fg = colors.surface0 },
         MiniStatuslineInactive = { fg = colors.overlay2 },
+        ['@yellow.bold'] = { fg = colors.yellow, bold = true }, -- or style = { 'bold' }
+        ['@teal.bold'] = { fg = colors.teal, bold = true },
+        ['@green.bold'] = { fg = colors.green, bold = true },
+        ['@red.bold'] = { fg = colors.red, bold = true },
+        ['@blue.bold'] = { fg = colors.blue, bold = true },
       }
     end,
     show_end_of_buffer = true,
