@@ -21,7 +21,7 @@ return {
           textobject = 'ic',
         },
         indent = {
-          enable = true,
+          enable = false,
         },
       }
     end
