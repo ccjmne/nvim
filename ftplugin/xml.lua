@@ -1,4 +1,5 @@
 -- Highlight artifactId and version in Maven's pom.xml
+-- and mute everything else.
 local lens = false
 vim.keymap.set('n', '<Leader>tz', function()
   lens = not lens
