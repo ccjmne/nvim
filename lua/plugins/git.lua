@@ -14,8 +14,14 @@ return {
       local nu = false
       vim.keymap.set('n', '<Leader>tn', function()
         nu = not nu
-        vim.opt.number = nu
-        vim.cmd.GitGutterSignsToggle()
+        -- Can't just toggle both, 'cause I could have independently toggled either
+        if nu then
+          vim.cmd('windo set nu')
+          vim.cmd.GitGutterSignsDisable()
+        else
+          vim.cmd('windo set nonu')
+          vim.cmd.GitGutterSignsEnable()
+        end
       end, { desc = 'GitGutter: Preview Hunk' })
     end,
   },
