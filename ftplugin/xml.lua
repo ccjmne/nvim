@@ -1,9 +1,8 @@
 -- Highlight artifactId and version in Maven's pom.xml
 -- and mute everything else.
-local lens = false
 vim.keymap.set('n', '<Leader>tz', function()
-  lens = not lens
-  vim.treesitter.query.set('xml', 'highlights', lens and [[
+  vim.g.xml_lens = not vim.g.xml_lens
+  vim.treesitter.query.set('xml', 'highlights', vim.g.xml_lens and [[
     (Comment)            @comment
     (STag (Name)         @punctuation)
     (ETag (Name)         @punctuation)
