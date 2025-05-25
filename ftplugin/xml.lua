@@ -28,4 +28,5 @@ vim.keymap.set('n', '<Leader>tz', function()
     vim.treesitter.stop(buf, 'xml')
     vim.treesitter.start(buf, 'xml')
   end
+  vim.notify(vim.g.xml_lens and 'POM lens enabled' or 'POM lens disabled')
 end, { buffer = true })
