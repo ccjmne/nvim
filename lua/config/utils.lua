@@ -15,10 +15,6 @@ vim.diagnostic.config { virtual_text = true }
 vim.keymap.set('n', '<Leader>q', vim.diagnostic.setqflist, { desc = 'Put diagnostics to qflist' })
 vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Put diagnostics to loclist' })
 
--- Move lines
-vim.keymap.set('v', 'J', ':m\'>+1<CR>gv=gv')
-vim.keymap.set('v', 'K', ':m\'<-2<CR>gv=gv')
-
 
 -- Keep cursor centred when scrolling
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz')
