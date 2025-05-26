@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.opt.spelllang = 'en_nz'
+
 vim.opt.number = false
 vim.opt.relativenumber = false
 vim.opt.signcolumn = 'yes'

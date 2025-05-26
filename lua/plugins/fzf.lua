@@ -35,6 +35,8 @@ return {
     { '<Leader>fq', function() require 'fzf-lua'.quickfix {} end,                                     desc = 'Find in qflist' },
     { '<Leader>fl', function() require 'fzf-lua'.loclist {} end,                                      desc = 'Find in loclist' },
 
+    { 'z=', function() require 'fzf-lua'.spell_suggest {} end,                                        desc = 'Suggest correct spelling' },
+
     {
       '<Leader>fa',
       function()
