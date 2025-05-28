@@ -2,6 +2,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     event = { 'BufReadPre', 'BufNewFile' },
+    branch = 'master', -- important for now, since the default soon will be `main`, whose API is incompatible and I'm not ready for the switch yet
     build = ':TSUpdate',
     config = function()
       ---@diagnostic disable-next-line: missing-fields
