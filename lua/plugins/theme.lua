@@ -7,6 +7,9 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     if statusline_nc and statusline_nc.bg then
       vim.api.nvim_set_hl(0, 'WinSeparator', { fg = statusline_nc.bg })
     end
+    -- The baked-in treesitter highlighting for vimdoc's ================= delimiter lines perturbs me
+    vim.api.nvim_set_hl(0, '@markup.heading.1.delimiter.vimdoc', { link = '@markup' })
+    vim.api.nvim_set_hl(0, '@markup.heading.2.delimiter.vimdoc', { link = '@markup' })
   end,
 })
 
