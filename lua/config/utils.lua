@@ -20,6 +20,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank({ timeout = 50 }) end,
 })
 
+vim.keymap.set('n', 'y<C-G>', function()
+  vim.fn.setreg(
+    vim.v.register,
+    vim.fn.exists('*fugitive#Object') == 1 and vim.fn['fugitive#Object'](vim.fn.expand('%')) or vim.fn.expand('%')
+  )
+end)
+
 vim.keymap.set('n', '<Leader>x', '<CMD>.lua<CR>')
 vim.keymap.set('n', '<Leader><Leader>x', '<CMD>source %<CR>')
 vim.keymap.set('v', '<Leader>x', ':lua<CR>')
