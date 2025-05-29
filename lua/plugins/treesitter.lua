@@ -7,9 +7,8 @@ return {
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require 'nvim-treesitter.configs'.setup {
-        ensure_installed = { 'lua', 'vim', 'vimdoc', 'markdown', 'javascript', 'typescript', 'java', 'query', 'diff', 'gitcommit', 'git_rebase' },
-        -- TODO: don't auto install. Some filetypes are better highlighted through built-in vim (e.g. tmux, gitcommit)
-        auto_install = true,
+        ensure_installed = { 'lua', 'vim', 'markdown', 'javascript', 'typescript', 'java', 'query', 'diff', 'git_rebase' },
+        auto_install = false,
         highlight = {
           enable = true,
           language_tree = true,
