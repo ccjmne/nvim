@@ -11,17 +11,9 @@ return {
       -- vim.api.nvim_set_hl(0, 'GitGutterChangeLineNr', { link = 'GitGutterChange' })
       -- vim.api.nvim_set_hl(0, 'GitGutterDeleteLineNr', { link = 'GitGutterDelete' })
       -- vim.api.nvim_set_hl(0, 'GitGutterChangeDeleteLineNr', { link = 'GitGutterChangeDelete' })
-      local nu = false
       vim.keymap.set('n', '<Leader>tn', function()
-        nu = not nu
-        -- Can't just toggle both, 'cause I could have independently toggled either
-        if nu then
-          vim.cmd('windo set nu')
-          vim.cmd.GitGutterSignsDisable()
-        else
-          vim.cmd('windo set nonu')
-          vim.cmd.GitGutterSignsEnable()
-        end
+        vim.cmd('windo set nu!')
+        vim.cmd.GitGutterSignsToggle()
       end, { desc = 'GitGutter: Preview Hunk' })
     end,
   },
