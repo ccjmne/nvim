@@ -27,9 +27,10 @@ vim.keymap.set('n', 'y<C-G>', function()
   )
 end)
 
-vim.keymap.set('n', '<Leader>x', '<CMD>.lua<CR>')
-vim.keymap.set('n', '<Leader><Leader>x', '<CMD>source %<CR>')
-vim.keymap.set('v', '<Leader>x', ':lua<CR>')
+vim.keymap.set('n', '<Leader>x', [[:.lua<CR>]])
+vim.keymap.set('v', '<Leader>x', [[:lua<CR>]])
+vim.keymap.set('n', '<Leader>z', [[:<C-R><C-L><CR>]])
+vim.keymap.set('v', '<leader>z', [[:<C-u>let @v = join(getline("'<", "'>"), "\n")<CR>:@v<CR>]])
 
 vim.keymap.set('n', '<Esc>', '<CMD>nohlsearch<CR><CMD>cclose<CR><CMD>pclose<CR>', { desc = 'Clear search highlight, close preview/quickfix' })
 
