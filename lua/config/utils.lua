@@ -20,6 +20,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank({ timeout = 50 }) end,
 })
 
+vim.keymap.set('n', [[]], [[mz:tabe %`zzz]])
+
 vim.keymap.set('n', 'y<C-G>', function()
   vim.fn.setreg(
     vim.v.register,
