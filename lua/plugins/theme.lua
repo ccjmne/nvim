@@ -31,7 +31,7 @@ return {
         LineNrBelow = { fg = colors.overlay0 },
         MiniIndentscopeSymbol = { fg = colors.overlay0 },
         ExtraWhitespace = { fg = colors.surface0, bg = colors.red },
-        Whitespace = { fg = colors.surface0 },
+        Whitespace = { fg = colors.surface2 },
         MiniStatuslineInactive = { fg = colors.overlay2 },
         SpellBad = { style = { 'underline' } },
         SpellCap = { style = { 'underline' } },
