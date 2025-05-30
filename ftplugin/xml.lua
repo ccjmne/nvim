@@ -13,6 +13,14 @@ vim.keymap.set('n', '<Leader>tz', function()
       (content)    @text.bold
       (ETag (Name) @green.bold))
 
+    (element
+        (STag (Name) @exclusion (#eq? @exclusion "exclusion"))
+        (content
+          (element
+            (STag (Name) @red.bold (#eq? @red.bold "artifactId"))
+            (content)    @text.bold
+            (ETag (Name) @red.bold))))
+
     (document
       root:
       (element
