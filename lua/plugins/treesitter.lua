@@ -14,6 +14,7 @@ return {
           'lua',
           'markdown',
           'query',
+          'sxhkdrc',
           'typescript',
           'vim',
         },
