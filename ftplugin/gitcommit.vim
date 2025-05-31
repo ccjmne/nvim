@@ -1,1 +1,1 @@
-set textwidth=72 expandtab shiftwidth=4 smarttab
+set tw=72 sw=4 et sta spell
