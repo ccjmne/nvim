@@ -6,24 +6,25 @@ return {
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require 'nvim-treesitter.configs'.setup {
-        ensure_installed = { 'lua', 'vim', 'markdown', 'javascript', 'typescript', 'java', 'query', 'diff', 'git_rebase' },
+        ensure_installed = {
+          'diff',
+          'git_rebase',
+          'java',
+          'javascript',
+          'lua',
+          'markdown',
+          'query',
+          'typescript',
+          'vim',
+        },
         auto_install = false,
+        indent = {
+          enable = true
+        },
         highlight = {
           enable = true,
           language_tree = true,
-          disable = function(lang, buf)
-            -- This lang parameter is the tree-sitter language, not quite the filetype.
-            -- When aren't they matching?
-            local ft = vim.bo[buf or 0].filetype
-            if lang ~= ft then
-              vim.notify(
-                string.format('Treesitter language "%s" does not match filetype "%s"', lang, ft),
-                vim.log.levels.WARN
-              )
-            end
-            return ({ gitcommit = true })[ft]
-                or vim.fn.getfsize(vim.fn.expand('%')) > 1024 * 100
-          end,
+          disable = function() return vim.fn.getfsize(vim.fn.expand('%')) > 1024 * 100 end,
         },
       }
       vim.api.nvim_create_autocmd('FileType', {
