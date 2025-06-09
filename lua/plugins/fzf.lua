@@ -40,6 +40,9 @@ return {
     {
       '<Leader>fa',
       function()
+        -- TODO: Use git interpret-trailers to modify the buffer
+        -- TODO: Also switch between Co-authored-by, Signed-off-by, Reviewed-by, Acked-by, etc.
+        -- TODO: Also find people from these trailers
         local gitdir = vim.fn.fnamemodify(vim.fn.finddir('.git', '.;'), ':p:h')
         require 'fzf-lua'.fzf_exec("git --git-dir=" .. gitdir .. " log --pretty='%aN <%aE>' --all | awk '!M[$0]++'", {
           prompt = 'Contributors> ',
