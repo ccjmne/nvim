@@ -38,7 +38,7 @@ return {
     { 'z=', function() require 'fzf-lua'.spell_suggest {} end,                                        desc = 'Suggest correct spelling' },
 
     {
-      '<Leader>fa',
+      '<Leader>fc',
       function()
         -- TODO: Use git interpret-trailers to modify the buffer
         -- TODO: Also switch between Co-authored-by, Signed-off-by, Reviewed-by, Acked-by, etc.
