@@ -4,6 +4,7 @@ return {
     dependencies = {
       'mason-org/mason.nvim',
       'mason-org/mason-lspconfig.nvim',
+      'pmizio/typescript-tools.nvim',
       'saghen/blink.cmp',
       {
         'folke/lazydev.nvim',
@@ -18,11 +19,11 @@ return {
     },
     config = function()
       require 'mason'.setup {}
-      require 'mason-lspconfig'.setup({
-        automatic_enable = { -- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#default-configuration
-          exclude = { 'lua_ls', 'ts_ls', 'rust_analyzer', 'tailwindcss', 'svelte', 'glslls' },
-        },
-      })
+      -- require 'mason-lspconfig'.setup({
+      --   automatic_enable = { -- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#default-configuration
+      --     exclude = { 'lua_ls', 'ts_ls', 'rust_analyzer', 'tailwindcss', 'svelte', 'glslls' },
+      --   },
+      -- })
       local capabilities = require 'blink.cmp'.get_lsp_capabilities()
       require 'lspconfig'.ts_ls.setup { capabilities = capabilities }
       require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
@@ -34,6 +35,10 @@ return {
       }
       require 'java'.setup()
       require 'lspconfig'.jdtls.setup { capabilities = capabilities }
+
+      require 'typescript-tools'.setup {
+        capabilities = capabilities,
+      }
 
       require 'lspconfig'.lua_ls.setup {
         on_init = function(client)
