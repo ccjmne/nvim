@@ -19,6 +19,7 @@ return {
   },
   {
     'tpope/vim-fugitive',
+    dependencies = { 'tpope/vim-rhubarb', 'shumphrey/fugitive-gitlab.vim' },
     config = function()
       vim.api.nvim_create_autocmd('FileType', {
         pattern = { 'git' },
