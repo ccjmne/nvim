@@ -1,6 +1,7 @@
 return {
   -- TODO: Check out "profiles" and set up my own
   'ibhagwan/fzf-lua',
+  lazy = false,
   keys = {
     { '<Leader>ff', function() require 'fzf-lua'.files {} end,                                        desc = 'Find in CWD' },
     { '<Leader>fn', function() require 'fzf-lua'.files { cwd = vim.fn.stdpath 'config' } end,         desc = 'Find in Neovim config' },
