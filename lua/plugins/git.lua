@@ -21,6 +21,7 @@ return {
     'tpope/vim-fugitive',
     dependencies = { 'tpope/vim-rhubarb', 'shumphrey/fugitive-gitlab.vim' },
     config = function()
+      vim.g['fugitive_gitlab_domains'] = { 'https://gitlab.build-unite.unite.eu/' }
       vim.api.nvim_create_autocmd('FileType', {
         pattern = { 'git' },
         callback = function()
