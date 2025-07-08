@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank({ timeout = 50 }) end,
 })
 
-vim.keymap.set('n', [[]], [[mz:tabe %`zzz]])
+vim.keymap.set('n', '<C-W><C-E>', 'mz:tabe %<C-M>`zzz')
 
 function _G.YankCG(type)
   local cg = vim.fn.exists('*fugitive#Object') == 1 and vim.fn['fugitive#Object'](vim.fn.expand('%')) or vim.fn.expand('%')
@@ -35,7 +35,7 @@ end, { expr = true })
 vim.keymap.set('n', '<Leader>x', [[:.lua<CR>]])
 vim.keymap.set('v', '<Leader>x', [[:lua<CR>]])
 vim.keymap.set('n', '<Leader>z', [[:<C-R><C-L><CR>]])
-vim.keymap.set('v', '<leader>z', [[:<C-u>let @v = join(getline("'<", "'>"), "\n")<CR>:@v<CR>]])
+vim.keymap.set('v', '<Leader>z', [[:let @v = join(getline("'<", "'>"), "\n")<CR>:@v<CR>]])
 
 vim.keymap.set('n', '<Esc>', '<CMD>nohlsearch<CR><CMD>cclose<CR><CMD>pclose<CR>', { desc = 'Clear search highlight, close preview/quickfix' })
 
