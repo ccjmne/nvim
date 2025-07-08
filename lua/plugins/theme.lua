@@ -10,6 +10,8 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     -- The baked-in treesitter highlighting for vimdoc's ================= delimiter lines perturbs me
     vim.api.nvim_set_hl(0, '@markup.heading.1.delimiter.vimdoc', { link = '@markup' })
     vim.api.nvim_set_hl(0, '@markup.heading.2.delimiter.vimdoc', { link = '@markup' })
+
+    vim.api.nvim_set_hl(0, 'CursorColumn', { link = 'CursorLine' })
   end,
 })
 
