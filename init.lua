@@ -3,7 +3,7 @@ vim.g.maplocalleader = ' '
 
 vim.opt.spelllang = 'en_nz'
 
-vim.opt.number = false
+vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.signcolumn = 'yes'
 
