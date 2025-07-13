@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt.spelllang = 'en_nz'
+vim.opt.spelllang = 'en_gb'
 
 vim.opt.number = true
 vim.opt.relativenumber = false
