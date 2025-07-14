@@ -10,6 +10,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.cursorline = true
 vim.opt.guicursor = ''
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 vim.opt.wrap = false
 
 vim.opt.undofile = true
