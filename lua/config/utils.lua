@@ -45,6 +45,10 @@ vim.diagnostic.config { virtual_text = true }
 vim.keymap.set('n', '<Leader>q', vim.diagnostic.setqflist, { desc = 'Put diagnostics to qflist' })
 vim.keymap.set('n', '<Leader>l', vim.diagnostic.setloclist, { desc = 'Put diagnostics to loclist' })
 
+vim.keymap.set('n', '<M-j>', '<CMD>cnext<CR>')
+vim.keymap.set('n', '<M-k>', '<CMD>cprev<CR>')
+vim.keymap.set('n', '<M-h>', '<CMD>cold<CR>')
+vim.keymap.set('n', '<M-l>', '<CMD>cnew<CR>')
 
 -- Keep cursor centred when scrolling
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz')
