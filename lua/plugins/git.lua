@@ -1,4 +1,5 @@
 return {
+  { 'sindrets/diffview.nvim' },
   {
     'airblade/vim-gitgutter',
     lazy = false,
