@@ -9,7 +9,7 @@ return {
     { '<Leader> ',  function() require 'fzf-lua'.buffers {} end,                                      desc = 'Find buffers' },
     { '<Leader>-',  function() require 'fzf-lua'.oldfiles {} end,                                     desc = 'Find recent files' },
 
-    { '<Leader>fg', function() require 'fzf-lua'.live_grep_glob {} end,                               desc = 'Grep with glob support' },
+    { '<Leader>fg', function() require 'fzf-lua'.live_grep {} end,                                    desc = 'Grep anything' },
     { '<Leader>fv', function() require 'fzf-lua'.grep_visual {} end,                                  desc = 'Grep visual selection',       mode = { 'n', 'v' } },
     { '<Leader>fw', function() require 'fzf-lua'.grep_cword {} end,                                   desc = 'Grep for word under cursor' },
     { '<Leader>fW', function() require 'fzf-lua'.grep_cWORD {} end,                                   desc = 'Grep for WORD under cursor' },
