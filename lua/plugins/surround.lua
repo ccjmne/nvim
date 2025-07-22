@@ -1,5 +1,5 @@
 return {
   'echasnovski/mini.surround',
-  keys = { 'sa', 'sd', 'sr', 'sf', 'sF', 'sh', 'sn' },
+  keys = { { 'sa', mode = { 'n', 'v' } }, 'sd', 'sr', 'sf', 'sF', 'sh', 'sn' },
   opts = {},
 }
