@@ -39,6 +39,7 @@ return {
         SpellCap = { style = { 'underline' } },
         SpellRare = { style = { 'underline' } },
         SpellLocal = { style = { 'underline' } },
+        ['@tag'] = { fg = colors.lavender }, -- xml
         ['@yellow.bold'] = { fg = colors.yellow, bold = true }, -- or style = { 'bold' }
         ['@teal.bold'] = { fg = colors.teal, bold = true },
         ['@green.bold'] = { fg = colors.green, bold = true },
