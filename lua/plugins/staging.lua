@@ -14,12 +14,7 @@ return {
   --     vim.notify = Notify
   --   end,
   -- },
-  {
-    'MagicDuck/grug-far.nvim',
-    config = function()
-      require 'grug-far'.setup {}
-    end
-  },
+  { 'MagicDuck/grug-far.nvim' },
   {
     'stevearc/oil.nvim',
     config = function()
