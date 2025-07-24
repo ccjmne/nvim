@@ -66,6 +66,7 @@ if #bufs > 1 then ---@cast bufs string[]
   vim.cmd('copen')
 end
 
+-- TODO: Just like :left, :right, :center, let it take a "width" argument
 vim.api.nvim_create_user_command('Title', function(opts)
   local padchar = opts.fargs[1] or '-'
   local center = opts.bang -- Use `Title!` to center the title
