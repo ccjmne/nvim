@@ -24,7 +24,7 @@ vim.keymap.set('n', '<C-W><C-E>', 'mz:tabe %<C-M>`zzz')
 
 function _G.YankCG(type)
   local cg = vim.fn.exists('*fugitive#Object') == 1 and vim.fn['fugitive#Object'](vim.fn.expand('%')) or vim.fn.expand('%')
-  vim.notify('Yanked ' .. cg)
+  vim.notify('Yanked ' .. cg .. ' to ' .. vim.v.register)
   vim.fn.setreg(vim.v.register, cg)
 end
 vim.keymap.set('n', 'y<C-G>', function()
