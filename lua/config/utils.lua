@@ -15,6 +15,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+vim.keymap.set('n', '[e', '<CMD>tabp<CR>')
+vim.keymap.set('n', ']e', '<CMD>tabn<CR>')
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking text',
   callback = function() vim.hl.on_yank({ timeout = 50 }) end,
