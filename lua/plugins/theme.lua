@@ -35,10 +35,6 @@ return {
         ExtraWhitespace = { fg = colors.surface0, bg = colors.red },
         Whitespace = { fg = colors.surface2 },
         MiniStatuslineInactive = { fg = colors.overlay2 },
-        SpellBad = { style = { 'underline' } },
-        SpellCap = { style = { 'underline' } },
-        SpellRare = { style = { 'underline' } },
-        SpellLocal = { style = { 'underline' } },
         ['@tag'] = { fg = colors.lavender }, -- xml
         ['@yellow.bold'] = { fg = colors.yellow, bold = true }, -- or style = { 'bold' }
         ['@teal.bold'] = { fg = colors.teal, bold = true },
