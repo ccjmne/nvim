@@ -40,6 +40,8 @@ return {
         capabilities = capabilities,
       }
 
+      require 'lspconfig'.somesass_ls.setup {}
+
       require 'lspconfig'.lua_ls.setup {
         on_init = function(client)
           if client.workspace_folders then
