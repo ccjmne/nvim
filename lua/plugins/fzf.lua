@@ -19,10 +19,7 @@ return {
     { '<Leader>fh', function() require 'fzf-lua'.helptags {} end,                                         desc = 'Find help tags' },
     { '<Leader>fk', function() require 'fzf-lua'.keymaps {} end,                                          desc = 'Find keymaps' },
 
-    -- Doesn't work nearly as well as it should... probably has to do with the fact that each language has its own nodes types.
-    -- Still though, why not support Lua out of the box? I must be missing something.
     { '<Leader>ft', function() require 'fzf-lua'.treesitter {} end,                                       desc = 'Find Treesitter symbols' },
-
     { '<Leader>ds', function() require 'fzf-lua'.lsp_document_symbols {} end,                             desc = 'Find document symbols' },
     { '<Leader>ws', function() require 'fzf-lua'.lsp_workspace_symbols {} end,                            desc = 'Find workspace symbols' },
 
