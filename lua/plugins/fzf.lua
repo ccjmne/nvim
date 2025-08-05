@@ -3,37 +3,36 @@ return {
   'ibhagwan/fzf-lua',
   lazy = false,
   keys = {
-    { '<Leader>ff', function() require 'fzf-lua'.files {} end,                                desc = 'Find in CWD' },
-    { '<Leader>fn', function() require 'fzf-lua'.files { cwd = vim.fn.stdpath 'config' } end, desc = 'Find in Neovim config' },
+    { '<Leader>ff', function() require 'fzf-lua'.files {} end,                                            desc = 'Find in CWD' },
+    { '<Leader>fn', function() require 'fzf-lua'.files { cwd = vim.fn.stdpath 'config' } end,             desc = 'Find in Neovim config' },
     { '<Leader>f,', function() require 'fzf-lua'.files { cwd = vim.env.HOME .. '/git/dotfiles2025' } end, desc = 'Find in new dotfiles' },
-    { '<Leader> ',  function() require 'fzf-lua'.buffers {} end,                              desc = 'Find buffers' },
-    { '<Leader>-',  function() require 'fzf-lua'.oldfiles {} end,                             desc = 'Find recent files' },
+    { '<Leader> ',  function() require 'fzf-lua'.buffers {} end,                                          desc = 'Find buffers' },
+    { '<Leader>-',  function() require 'fzf-lua'.oldfiles {} end,                                         desc = 'Find recent files' },
 
-    { '<Leader>fg', function() require 'fzf-lua'.live_grep {} end,                            desc = 'Grep anything' },
-    { '<Leader>fv', function() require 'fzf-lua'.grep_visual {} end,                          desc = 'Grep visual selection',       mode = { 'n', 'v' } },
-    { '<Leader>fw', function() require 'fzf-lua'.grep_cword {} end,                           desc = 'Grep for word under cursor' },
-    { '<Leader>fW', function() require 'fzf-lua'.grep_cWORD {} end,                           desc = 'Grep for WORD under cursor' },
+    { '<Leader>fg', function() require 'fzf-lua'.live_grep {} end,                                        desc = 'Grep anything' },
+    { '<Leader>fv', function() require 'fzf-lua'.grep_visual {} end,                                      desc = 'Grep visual selection',       mode = { 'n', 'v' } },
+    { '<Leader>fw', function() require 'fzf-lua'.grep_cword {} end,                                       desc = 'Grep for word under cursor' },
+    { '<Leader>fW', function() require 'fzf-lua'.grep_cWORD {} end,                                       desc = 'Grep for WORD under cursor' },
 
-    { '<Leader>fr', function() require 'fzf-lua'.resume {} end,                               desc = 'Resume search' },
-    { '<Leader>f?', function() require 'fzf-lua'.builtin {} end,                              desc = 'Find builtin fzf-lua command' },
-    { '<Leader>fh', function() require 'fzf-lua'.helptags {} end,                             desc = 'Find help tags' },
-    { '<Leader>fk', function() require 'fzf-lua'.keymaps {} end,                              desc = 'Find keymaps' },
+    { '<Leader>fr', function() require 'fzf-lua'.resume {} end,                                           desc = 'Resume search' },
+    { '<Leader>f?', function() require 'fzf-lua'.builtin {} end,                                          desc = 'Find builtin fzf-lua command' },
+    { '<Leader>fh', function() require 'fzf-lua'.helptags {} end,                                         desc = 'Find help tags' },
+    { '<Leader>fk', function() require 'fzf-lua'.keymaps {} end,                                          desc = 'Find keymaps' },
 
     -- Doesn't work nearly as well as it should... probably has to do with the fact that each language has its own nodes types.
     -- Still though, why not support Lua out of the box? I must be missing something.
-    { '<Leader>ft', function() require 'fzf-lua'.treesitter {} end,                           desc = 'Find Treesitter symbols' },
+    { '<Leader>ft', function() require 'fzf-lua'.treesitter {} end,                                       desc = 'Find Treesitter symbols' },
 
-    { '<Leader>ds', function() require 'fzf-lua'.lsp_document_symbols {} end,                 desc = 'Find document symbols' },
-    { '<Leader>ws', function() require 'fzf-lua'.lsp_workspace_symbols {} end,                desc = 'Find workspace symbols' },
+    { '<Leader>ds', function() require 'fzf-lua'.lsp_document_symbols {} end,                             desc = 'Find document symbols' },
+    { '<Leader>ws', function() require 'fzf-lua'.lsp_workspace_symbols {} end,                            desc = 'Find workspace symbols' },
 
     -- TODO: Finish figuring out how to set up quickfix and loclist from diagnostics without any hitches
     -- Figure out better. See https://github.com/lukas-reineke/dotfiles/blob/master/vim/lua/lists.lua and the supporting keymaps.lua
     -- Also consider https://github.com/kevinhwang91/nvim-bqf
-    { '<Leader>fq', function() require 'fzf-lua'.quickfix {} end,                             desc = 'Find in qflist' },
-    { '<Leader>fl', function() require 'fzf-lua'.loclist {} end,                              desc = 'Find in loclist' },
+    { '<Leader>fq', function() require 'fzf-lua'.quickfix {} end,                                         desc = 'Find in qflist' },
+    { '<Leader>fl', function() require 'fzf-lua'.loclist {} end,                                          desc = 'Find in loclist' },
 
-    { 'z=',         function() require 'fzf-lua'.spell_suggest {} end,                        desc = 'Suggest correct spelling' },
-
+    { 'z=',         function() require 'fzf-lua'.spell_suggest {} end,                                    desc = 'Suggest correct spelling' },
     {
       '<Leader>fc',
       function()
