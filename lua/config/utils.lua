@@ -18,6 +18,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.keymap.set('n', '[e', '<CMD>tabp<CR>')
 vim.keymap.set('n', ']e', '<CMD>tabn<CR>')
 
+vim.keymap.set('n', '<Leader>ve', function()
+  vim.b.virtualedit = not vim.b.virtualedit
+  if vim.b.virtualedit then vim.cmd('set ve=all cuc')
+                       else vim.cmd('set ve& cuc&')
+  end
+end)
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking text',
   callback = function() vim.hl.on_yank({ timeout = 50 }) end,
