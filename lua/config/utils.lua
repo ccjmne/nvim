@@ -15,9 +15,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.keymap.set('n', '[e', '<CMD>tabp<CR>')
-vim.keymap.set('n', ']e', '<CMD>tabn<CR>')
-
 vim.keymap.set('n', '<Leader>ve', function()
   vim.b.virtualedit = not vim.b.virtualedit
   if vim.b.virtualedit then vim.cmd('set ve=all cuc')
