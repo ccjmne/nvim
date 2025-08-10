@@ -1,2 +1,1 @@
-au BufRead,BufNewFile sxhkdrc set ft=sxhkdrc
-
+au BufRead,BufNewFile sxhkdrc set ft=sxhkdrc cms=#\ %s
