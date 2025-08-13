@@ -1,5 +1,6 @@
 return {
   'stefandtw/quickfix-reflector.vim' ,
+  '73/vim-klog',
   {
     dir = '.',
     config = function()
