@@ -6,6 +6,7 @@ vim.o.spelllang = 'en_gb'
 vim.o.number = true
 vim.o.relativenumber = false
 vim.o.signcolumn = 'yes'
+vim.o.foldcolumn = '0'
 
 vim.o.cursorline = true
 vim.o.guicursor = ''
@@ -24,14 +25,12 @@ vim.o.incsearch = true
 vim.o.inccommand = 'split'
 vim.o.hlsearch = true
 
+vim.o.laststatus = 1
 vim.o.splitright = true
 vim.o.splitbelow = true
 
 vim.o.list = true
 vim.o.listchars='tab:» ,trail:·,nbsp:␣,precedes:<,extends:>'
-
-vim.o.laststatus = 1
-vim.o.foldcolumn = '0'
 
 require('config.utils')
 require('config.lazy')
