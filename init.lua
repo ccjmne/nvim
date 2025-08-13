@@ -28,6 +28,7 @@ vim.o.hlsearch = true
 vim.o.laststatus = 1
 vim.o.splitright = true
 vim.o.splitbelow = true
+vim.o.fillchars='vert:█,horiz:█,horizup:█,horizdown:█,vertleft:█,vertright:█,verthoriz:█'
 
 vim.o.list = true
 vim.o.listchars='tab:» ,trail:·,nbsp:␣,precedes:<,extends:>'

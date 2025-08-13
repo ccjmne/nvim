@@ -1,5 +1,4 @@
 vim.cmd [[
-  set fillchars+=vert:█,horiz:█,horizup:█,horizdown:█,vertleft:█,vertright:█,verthoriz:█
   highlight! link @markup.heading.1.delimiter.vimdoc @markup " fix disturbing treesitter vimdoc highlighting
   highlight! link @markup.heading.2.delimiter.vimdoc @markup
   highlight! link CursorColumn CursorLine
