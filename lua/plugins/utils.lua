@@ -1,8 +1,5 @@
 return {
-  {
-    'stefandtw/quickfix-reflector.vim',
-    config = function() end,
-  },
+  'stefandtw/quickfix-reflector.vim' ,
   {
     dir = '.',
     config = function()
