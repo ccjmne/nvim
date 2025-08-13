@@ -1,17 +1,13 @@
--- Blocky window separators
-vim.opt.fillchars:append({ vert = "█", horiz = "█", horizup = "█", horizdown = "█", vertleft = "█", vertright = "█", verthoriz = "█" })
-vim.api.nvim_create_autocmd('ColorScheme', {
-  pattern = '*',
-  callback = function()
-    local statusline_nc = vim.api.nvim_get_hl(0, { name = 'StatusLineNC', link = false })
-    if statusline_nc and statusline_nc.bg then
-      vim.api.nvim_set_hl(0, 'WinSeparator', { fg = statusline_nc.bg })
-    end
-    -- The baked-in treesitter highlighting for vimdoc's ================= delimiter lines perturbs me
-    vim.api.nvim_set_hl(0, '@markup.heading.1.delimiter.vimdoc', { link = '@markup' })
-    vim.api.nvim_set_hl(0, '@markup.heading.2.delimiter.vimdoc', { link = '@markup' })
+vim.cmd [[
+  set fillchars+=vert:█,horiz:█,horizup:█,horizdown:█,vertleft:█,vertright:█,verthoriz:█
+  highlight! link @markup.heading.1.delimiter.vimdoc @markup " fix disturbing treesitter vimdoc highlighting
+  highlight! link @markup.heading.2.delimiter.vimdoc @markup
+  highlight! link CursorColumn CursorLine
+]]
 
-    vim.api.nvim_set_hl(0, 'CursorColumn', { link = 'CursorLine' })
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    vim.api.nvim_set_hl(0, 'WinSeparator', { fg = vim.api.nvim_get_hl(0, { name = 'StatusLineNC', link = false }).bg })
   end,
 })
 
