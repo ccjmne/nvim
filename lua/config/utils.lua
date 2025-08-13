@@ -15,6 +15,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+local localrt = vim.fn.finddir('.vimrt', ';')
+if localrt ~= '' then
+  vim.opt.rtp:append(localrt)
+  vim.notify('Added ' .. localrt .. ' to runtimepath', vim.log.levels.INFO)
+end
+
 vim.keymap.set('n', '<Leader>ve', function()
   vim.b.virtualedit = not vim.b.virtualedit
   if vim.b.virtualedit then vim.cmd('set ve=all cuc')
