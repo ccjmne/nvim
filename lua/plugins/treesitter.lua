@@ -16,7 +16,6 @@ return {
           'query',
           'sxhkdrc',
           'typescript',
-          'vim',
         },
         auto_install = false,
         indent = {
