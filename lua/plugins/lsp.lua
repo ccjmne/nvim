@@ -4,7 +4,7 @@ return {
     dependencies = {
       'mason-org/mason.nvim',
       'mason-org/mason-lspconfig.nvim',
-      'pmizio/typescript-tools.nvim',
+      { 'pmizio/typescript-tools.nvim', dependencies = 'nvim-lua/plenary.nvim' },
       'saghen/blink.cmp',
       {
         'folke/lazydev.nvim',
