@@ -109,7 +109,7 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
-vim.keymap.set({ 'n', 't' }, '<Leader>tt', function()
+vim.keymap.set({ 'n' }, '<Leader>tt', function()
   vim.cmd [[
     vertical term
     wincmd J
