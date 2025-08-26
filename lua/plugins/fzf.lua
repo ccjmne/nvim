@@ -8,6 +8,7 @@ return {
     { '<Leader>f,', function() require 'fzf-lua'.files { cwd = vim.env.HOME .. '/git/dotfiles2025' } end },
     { '<Leader> ',  function() require 'fzf-lua'.buffers {} end },
     { '<Leader>-',  function() require 'fzf-lua'.oldfiles {} end },
+    { '<Leader>f"', function() require 'fzf-lua'.registers {} end },
 
     { '<Leader>fg', function() require 'fzf-lua'.live_grep {} end },
     { '<Leader>fv', function() require 'fzf-lua'.grep_visual {} end, mode = { 'n', 'v' } },
