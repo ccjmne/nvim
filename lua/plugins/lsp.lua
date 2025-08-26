@@ -28,6 +28,8 @@ return {
       require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
       require 'lspconfig'.tailwindcss.setup { capabilities = capabilities }
       require 'lspconfig'.svelte.setup { capabilities = capabilities }
+      require 'lspconfig'.somesass_ls.setup { capabilities = capabilities }
+      require 'lspconfig'.css_variables.setup { capabilities = capabilities }
       require 'lspconfig'.glslls.setup {
         capabilities = capabilities,
         cmd = { 'glslls', '--stdin', '--target-env', 'opengl' },
@@ -36,8 +38,6 @@ return {
       -- require 'lspconfig'.jdtls.setup { capabilities = capabilities }
 
       require 'typescript-tools'.setup { capabilities = capabilities }
-
-      require 'lspconfig'.somesass_ls.setup {}
 
       require 'lspconfig'.lua_ls.setup {
         on_init = function(client)
