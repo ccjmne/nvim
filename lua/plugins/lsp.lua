@@ -25,7 +25,6 @@ return {
       --   },
       -- })
       local capabilities = require 'blink.cmp'.get_lsp_capabilities()
-      require 'lspconfig'.ts_ls.setup { capabilities = capabilities }
       require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
       require 'lspconfig'.tailwindcss.setup { capabilities = capabilities }
       require 'lspconfig'.svelte.setup { capabilities = capabilities }
@@ -36,9 +35,7 @@ return {
       -- require 'java'.setup()
       -- require 'lspconfig'.jdtls.setup { capabilities = capabilities }
 
-      require 'typescript-tools'.setup {
-        capabilities = capabilities,
-      }
+      require 'typescript-tools'.setup { capabilities = capabilities }
 
       require 'lspconfig'.somesass_ls.setup {}
 
