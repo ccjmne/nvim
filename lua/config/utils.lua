@@ -7,10 +7,8 @@ vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client:supports_method('textDocument/foldingRange') then
-      local win = vim.api.nvim_get_current_win()
-      vim.wo[win][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
+    if vim.lsp.get_client_by_id(args.data.client_id):supports_method('textDocument/foldingRange') then
+      vim.wo[vim.api.nvim_get_current_win()][0].foldexpr = 'v:lua.vim.lsp.foldexpr()'
     end
   end,
 })
@@ -29,8 +27,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.keymap.set('n', '<C-W><C-E>', 'mz:tabe %<C-M>`zzz')
 
-function _G.YankCG(type)
-  local cg = vim.fn.exists('*fugitive#Object') == 1 and vim.fn['fugitive#Object'](vim.fn.expand('%')) or vim.fn.expand('%')
+function _G.YankCG()
+  local cg = vim.fn.exists('*fugitive#Object') == 1
+    and vim.fn['fugitive#Object'](vim.fn.expand('%'))
+    or  vim.fn.expand('%')
   vim.notify('Yanked ' .. cg .. ' to ' .. vim.v.register)
   vim.fn.setreg(vim.v.register, cg)
 end
