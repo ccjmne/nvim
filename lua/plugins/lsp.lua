@@ -30,6 +30,7 @@ return {
       require 'lspconfig'.svelte.setup { capabilities = capabilities }
       require 'lspconfig'.somesass_ls.setup { capabilities = capabilities }
       require 'lspconfig'.css_variables.setup { capabilities = capabilities }
+      require 'lspconfig'.bashls.setup { capabilities = capabilities }
       require 'lspconfig'.glslls.setup {
         capabilities = capabilities,
         cmd = { 'glslls', '--stdin', '--target-env', 'opengl' },
