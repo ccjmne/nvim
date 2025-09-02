@@ -15,21 +15,18 @@ vim.keymap.set('n', '<Leader>tz', function()
 
     (element
         (STag (Name) @exclusion (#eq? @exclusion "exclusion"))
-        (content
-          (element
-            (STag (Name) @red.bold (#eq? @red.bold "artifactId"))
-            (content)    @text.bold
-            (ETag (Name) @red.bold))))
+        (content (element
+          (STag (Name) @red.bold (#eq? @red.bold "artifactId"))
+          (content)    @text.bold
+          (ETag (Name) @red.bold))))
 
     (document
-      root:
-      (element
+      root: (element
         (STag (Name) @root_tag (#eq? @root_tag "project"))
-        (content
-          (element
-            (STag (Name) @yellow.bold (#any-of? @yellow.bold "artifactId" "version"))
-            (content)    @text.bold
-            (ETag (Name) @yellow.bold)))))
+        (content (element
+          (STag (Name) @yellow.bold (#any-of? @yellow.bold "artifactId" "version"))
+          (content)    @text.bold
+          (ETag (Name) @yellow.bold)))))
   ]] or nil)
   local buf = vim.api.nvim_get_current_buf()
   if vim.treesitter.highlighter.active[buf] then
