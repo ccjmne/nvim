@@ -57,6 +57,8 @@ return {
       previewers = {
         builtin = { syntax_limit_b = 1024 * 100 },
       },
+      grep = { rg_opts = '--hidden --line-number --column --smart-case' },
+      files = { fd_opts = '--hidden' },
     }
     -- TODO: If I'm going to do that, I'll have to also boot up fzf-lua on anything and everything that would trigger a ui-select.
     require 'fzf-lua'.register_ui_select()
