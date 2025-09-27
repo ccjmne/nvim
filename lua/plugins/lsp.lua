@@ -6,15 +6,9 @@ return {
       'mason-org/mason-lspconfig.nvim',
       { 'pmizio/typescript-tools.nvim', dependencies = 'nvim-lua/plenary.nvim' },
       'saghen/blink.cmp',
-      -- 'nvim-java/nvim-java',
     },
     config = function()
       require 'mason'.setup {}
-      -- require 'mason-lspconfig'.setup({
-      --   automatic_enable = { -- https://github.com/mason-org/mason-lspconfig.nvim?tab=readme-ov-file#default-configuration
-      --     exclude = { 'lua_ls', 'ts_ls', 'rust_analyzer', 'tailwindcss', 'svelte', 'glslls' },
-      --   },
-      -- })
       local capabilities = require 'blink.cmp'.get_lsp_capabilities()
       require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
       require 'lspconfig'.tailwindcss.setup { capabilities = capabilities }
@@ -26,8 +20,6 @@ return {
         capabilities = capabilities,
         cmd = { 'glslls', '--stdin', '--target-env', 'opengl' },
       }
-      -- require 'java'.setup()
-      -- require 'lspconfig'.jdtls.setup { capabilities = capabilities }
 
       require 'typescript-tools'.setup { capabilities = capabilities }
 
