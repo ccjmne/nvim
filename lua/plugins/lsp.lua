@@ -10,17 +10,6 @@ return {
     config = function()
       require 'mason'.setup {}
       local capabilities = require 'blink.cmp'.get_lsp_capabilities()
-      require 'lspconfig'.rust_analyzer.setup { capabilities = capabilities }
-      require 'lspconfig'.tailwindcss.setup { capabilities = capabilities }
-      require 'lspconfig'.svelte.setup { capabilities = capabilities }
-      require 'lspconfig'.somesass_ls.setup { capabilities = capabilities }
-      require 'lspconfig'.css_variables.setup { capabilities = capabilities }
-      require 'lspconfig'.bashls.setup { capabilities = capabilities }
-      require 'lspconfig'.glslls.setup {
-        capabilities = capabilities,
-        cmd = { 'glslls', '--stdin', '--target-env', 'opengl' },
-      }
-
       require 'typescript-tools'.setup { capabilities = capabilities }
 
       vim.lsp.config('lua_ls', {
@@ -46,7 +35,20 @@ return {
         end,
         settings = { Lua = {} }
       })
-      vim.lsp.enable('lua_ls')
+
+      vim.lsp.enable { -- TODO: use blink's capabilities
+        'bashls',
+        'css_variables',
+        'css_variables',
+        'glslls', -- TODO: cmd = { 'glslls', '--stdin', '--target-env', 'opengl' }
+        'lua_ls',
+        'rust_analyzer',
+        'somesass_ls',
+        'somesass_ls',
+        'svelte',
+        'tailwindcss',
+        'tailwindcss',
+      }
     end
   },
 }
