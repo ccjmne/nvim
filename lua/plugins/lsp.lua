@@ -3,7 +3,6 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       'mason-org/mason.nvim',
-      'mason-org/mason-lspconfig.nvim',
       { 'pmizio/typescript-tools.nvim', dependencies = 'nvim-lua/plenary.nvim' },
       'saghen/blink.cmp',
     },
