@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank({ timeout = 50 }) end,
 })
 
-vim.keymap.set('n', '<C-W><C-E>', 'mz:tabe %<C-M>`zzz')
+vim.keymap.set('n', '<C-W><C-E>', 'mz:tabe %<C-M>`zzzzv')
 
 vim.cmd [[
 nmap y<C-G> <CMD>call setreg(v:register, exists('*fugitive#Object') ? fugitive#Object(expand('%')) : expand('%'))<CR>
