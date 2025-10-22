@@ -5,6 +5,9 @@ vim.opt.fillchars:append({ fold = ' ' })
 vim.opt.foldtext = ''
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- TODO: prefer actually only setting fdm to expr if and only iff treesitter folds are available for the buffer
+vim.cmd "autocmd BufWinEnter * if &buftype == '' | set fdm=manual | endif"
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     if vim.lsp.get_client_by_id(args.data.client_id):supports_method('textDocument/foldingRange') then
