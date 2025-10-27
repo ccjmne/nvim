@@ -15,6 +15,8 @@ return {
       local localrt = vim.fn.finddir('.vimrt', ';')
       if localrt ~= '' then
         vim.opt.rtp:append(localrt)
+        vim.cmd 'runtime! after/ftdetect/*.vim'
+        vim.cmd 'runtime! after/ftplugin/*.vim'
         vim.notify('Added ' .. localrt .. ' to runtimepath', vim.log.levels.INFO)
       end
     end,
