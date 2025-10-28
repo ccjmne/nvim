@@ -8,6 +8,15 @@ vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 -- TODO: prefer actually only setting fdm to expr if and only iff treesitter folds are available for the buffer
 vim.cmd "autocmd BufWinEnter * if &buftype == '' | set fdm=manual | endif"
 
+-- TODO: consider a more comprehensive session management solution; I think tpope has something to that effect
+vim.cmd[[
+  augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * silent! mkview
+  autocmd BufWinEnter * silent! loadview
+  augroup END
+]]
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     if vim.lsp.get_client_by_id(args.data.client_id):supports_method('textDocument/foldingRange') then
