@@ -4,7 +4,7 @@ vim.g.maplocalleader = ' '
 vim.o.spelllang = 'en_gb'
 
 vim.o.number = true
-vim.o.relativenumber = false
+vim.o.relativenumber = true
 vim.o.signcolumn = 'yes'
 vim.o.foldcolumn = '0'
 
