@@ -1,16 +1,18 @@
 return {
   {
     'github/copilot.vim',
-    config = function()
-      local enabled = true
-      vim.keymap.set(
-        'n', '<Leader>tc', function()
-          enabled = not enabled
-          vim.cmd('Copilot ' .. (enabled and 'enable' or 'disable'))
-          vim.notify('Copilot ' .. (enabled and 'enabled' or 'disabled'))
+    keys = {
+      {
+        '<leader>tc',
+        function()
+          vim.g.copilot_is_enabled = not vim.g.copilot_is_enabled
+          if vim.g.copilot_is_enabled then vim.cmd 'Copilot enable'
+          else                             vim.cmd 'Copilot disable'
+          end
+          print('Copilot ' .. (vim.g.copilot_is_enabled and 'enabled' or 'disabled'))
         end,
-        { desc = 'Toggle Copilot' })
-    end
+      },
+    },
   },
   {
     'CopilotC-Nvim/CopilotChat.nvim',
@@ -28,7 +30,7 @@ return {
         desc = 'CopilotChat - Prompt actions',
       },
       {
-        '<leader>co',
+        '<Leader>co',
         function()
           local input = vim.fn.input('Quick Chat: ')
           if input ~= '' then
