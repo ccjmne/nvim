@@ -1,6 +1,6 @@
+-- TODO: move to set.lua
 vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
-
 vim.opt.fillchars:append({ fold = ' ' })
 vim.opt.foldtext = ''
 vim.opt.foldmethod = 'expr'
@@ -17,6 +17,7 @@ vim.cmd[[
   augroup END
 ]]
 
+-- TODO: move to au.lua
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     if vim.lsp.get_client_by_id(args.data.client_id):supports_method('textDocument/foldingRange') then
@@ -25,6 +26,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- TODO: move to map.lua
 vim.keymap.set('n', '<Leader>ve', function()
   vim.b.virtualedit = not vim.b.virtualedit
   if vim.b.virtualedit then vim.cmd('setlocal ve=all cuc')
@@ -33,14 +35,13 @@ vim.keymap.set('n', '<Leader>ve', function()
 end)
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking text',
   callback = function() vim.hl.on_yank({ timeout = 50 }) end,
 })
 
 vim.keymap.set('n', '<C-W><C-E>', 'mz:tabe %<C-M>`zzzzv')
 
 vim.cmd [[
-nmap y<C-G> <CMD>call setreg(v:register, exists('*fugitive#Object') ? fugitive#Object(expand('%')) : expand('%'))<CR>
+  nmap y<C-G> <CMD>call setreg(v:register, exists('*fugitive#Object') ? fugitive#Object(expand('%')) : expand('%'))<CR>
 ]]
 
 vim.keymap.set('n', '<Leader>x', [[:.lua<CR>]])
@@ -48,7 +49,7 @@ vim.keymap.set('v', '<Leader>x', [[:lua<CR>]])
 vim.keymap.set('n', '<Leader>z', [[:<C-R><C-L><CR>]])
 vim.keymap.set('v', '<Leader>z', [[:let @v = join(getline("'<", "'>"), "\n")<CR>:@v<CR>]])
 
-vim.keymap.set('n', '<Esc>', '<CMD>nohlsearch<CR><CMD>cclose<CR><CMD>pclose<CR>', { desc = 'Clear search highlight, close preview/quickfix' })
+vim.keymap.set('n', '<Esc>', '<CMD>nohl<CR><CMD>lcl<CR><CMD>ccl<CR><CMD>pc<CR>')
 
 vim.diagnostic.config { virtual_text = true }
 -- Figure out better. See https://github.com/lukas-reineke/dotfiles/blob/master/vim/lua/lists.lua

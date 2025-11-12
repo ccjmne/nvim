@@ -33,6 +33,7 @@ return {
     {
       '<Leader>fc',
       function()
+        -- TODO: Deduplicate entries, through case at least, through email if realistically feasible
         -- TODO: Use git interpret-trailers to modify the buffer
         -- TODO: Also switch between Co-authored-by, Signed-off-by, Reviewed-by, Acked-by, etc.
         -- TODO: Also find people from these trailers
@@ -51,8 +52,8 @@ return {
   config = function()
     require 'fzf-lua'.setup {
       'borderless',
-       -- TODO: Would be nice to have some difference in colouring
-       -- between the search and preview panels
+      -- TODO: Would be nice to have some difference in colouring
+      -- between the search and preview panels
       fzf_colors = false,
       previewers = {
         builtin = { syntax_limit_b = 1024 * 100 },
