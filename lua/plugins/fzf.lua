@@ -31,6 +31,15 @@ return {
     { '<Leader>fl', function() require 'fzf-lua'.loclist {} end },
     { 'z=',         function() require 'fzf-lua'.spell_suggest {} end },
     {
+      '<Leader>fd',
+      function()
+        require 'fzf-lua'.fzf_exec("fd --type directory", {
+          prompt = vim.fn.fnamemodify(vim.fn.getcwd(), ':~') .. '> ',
+          actions = { ['default'] = function(s) vim.cmd('Oil ' .. s[1]) end },
+        })
+      end,
+    },
+    {
       '<Leader>fc',
       function()
         -- TODO: Deduplicate entries, through case at least, through email if realistically feasible
