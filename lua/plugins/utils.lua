@@ -1,4 +1,5 @@
 return {
+  'tpope/vim-abolish',
   'stefandtw/quickfix-reflector.vim' ,
   {
     '73/vim-klog',
