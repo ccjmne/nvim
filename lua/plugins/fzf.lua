@@ -34,8 +34,9 @@ return {
       '<Leader>fd',
       function()
         require 'fzf-lua'.fzf_exec("fd --type directory", {
-          prompt = vim.fn.fnamemodify(vim.fn.getcwd(), ':~') .. '> ',
-          actions = { ['default'] = function(s) vim.cmd('Oil ' .. s[1]) end },
+          prompt = vim.fn.fnamemodify(vim.fn.getcwd(), ':~') .. '/',
+          preview = { fn = function(dir) return vim.fn.system({ 'ls', '-Ah', '--color', '--classify', '--group-directories-first', dir[1] }) end },
+          actions = { default = function(dir) vim.cmd('Oil ' .. dir[1]) end },
         })
       end,
     },
