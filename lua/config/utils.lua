@@ -10,6 +10,7 @@ vim.cmd "autocmd BufWinEnter * if &buftype == '' | set fdm=manual | endif"
 
 -- TODO: consider a more comprehensive session management solution; I think tpope has something to that effect
 vim.cmd[[
+  set viewoptions-=curdir
   augroup remember_folds
   autocmd!
   autocmd BufWinLeave * silent! mkview
