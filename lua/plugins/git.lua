@@ -7,7 +7,6 @@ return {
       vim.g.gitgutter_preview_win_floating = 0
       vim.g.gitgutter_highlight_linenrs = 1
       vim.g.gitgutter_signs = 0
-      vim.g.gitgutter_grep = 'rg'
       -- vim.api.nvim_set_hl(0, 'GitGutterAddLineNr', { link = 'GitGutterAdd' })
       -- vim.api.nvim_set_hl(0, 'GitGutterChangeLineNr', { link = 'GitGutterChange' })
       -- vim.api.nvim_set_hl(0, 'GitGutterDeleteLineNr', { link = 'GitGutterDelete' })
