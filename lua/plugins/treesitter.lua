@@ -7,14 +7,11 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require 'nvim-treesitter.configs'.setup {
         ensure_installed = {
-          'diff',
-          'git_rebase',
           'java',
           'javascript',
           'lua',
           'markdown',
           'query',
-          'sxhkdrc',
           'typescript',
         },
         auto_install = false,
