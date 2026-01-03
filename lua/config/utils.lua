@@ -68,12 +68,6 @@ vim.keymap.set('n', '<M-k>', '<CMD>cprev<CR>')
 vim.keymap.set('n', '<M-h>', '<CMD>cold<CR>')
 vim.keymap.set('n', '<M-l>', '<CMD>cnew<CR>')
 
--- Keep cursor centred when scrolling
-vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz')
-vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz')
-vim.keymap.set({ 'n', 'v' }, 'n', 'nzzzv')
-vim.keymap.set({ 'n', 'v' }, 'N', 'Nzzzv')
-
 local bufs = vim.fn.argv()
 if #bufs > 1 then ---@cast bufs string[]
   local qflist = {}
