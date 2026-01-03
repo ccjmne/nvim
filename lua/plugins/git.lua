@@ -10,6 +10,11 @@ return {
     end,
   },
   {
+    "linrongbin16/gitlinker.nvim",
+    cmd = "GitLink",
+    opts = {},
+  },
+  {
     'tpope/vim-fugitive',
     dependencies = { 'tpope/vim-rhubarb', 'shumphrey/fugitive-gitlab.vim' },
     config = function()
