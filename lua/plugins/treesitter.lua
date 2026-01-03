@@ -12,6 +12,7 @@ return {
           'lua',
           'markdown',
           'query',
+          'toml',
           'typescript',
         },
         auto_install = false,
