@@ -14,6 +14,7 @@ return {
           'query',
           'toml',
           'typescript',
+          'xml',
         },
         auto_install = false,
         indent = {
