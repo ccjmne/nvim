@@ -11,7 +11,10 @@ return {
   'catppuccin/nvim',
   name = 'catppuccin',
   priority = 1000,
-  init = function() vim.cmd.colorscheme 'catppuccin' end,
+  config = function(_, opts)
+    require('catppuccin').setup(opts)
+    vim.cmd.colorscheme 'catppuccin'
+  end,
   opts = {
     custom_highlights = function(colors)
       return {
