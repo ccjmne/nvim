@@ -9,10 +9,10 @@ return {
           vim.g.copilot_is_enabled = not vim.g.copilot_is_enabled
           if vim.g.copilot_is_enabled then
             vim.cmd 'Copilot enable'
-            vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+            vim.keymap.set('i', '<C-Y>', 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
           else
             vim.cmd 'Copilot disable'
-            vim.keymap.del('i', '<C-J>')
+            vim.keymap.del('i', '<C-Y>')
           end
           print('Copilot ' .. (vim.g.copilot_is_enabled and 'enabled' or 'disabled'))
         end,
