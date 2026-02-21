@@ -39,14 +39,11 @@ return {
         'bashls',
         'clangd',
         'css_variables',
-        'css_variables',
         'glslls', -- TODO: cmd = { 'glslls', '--stdin', '--target-env', 'opengl' }
         'lua_ls',
         'rust_analyzer',
         'somesass_ls',
-        'somesass_ls',
         'svelte',
-        'tailwindcss',
         'tailwindcss',
       }
     end
