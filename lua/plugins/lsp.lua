@@ -37,6 +37,7 @@ return {
 
       vim.lsp.enable { -- TODO: use blink's capabilities
         'bashls',
+        'clangd',
         'css_variables',
         'css_variables',
         'glslls', -- TODO: cmd = { 'glslls', '--stdin', '--target-env', 'opengl' }
