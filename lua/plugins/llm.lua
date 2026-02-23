@@ -49,7 +49,7 @@ return {
     },
     build = 'make tiktoken',
     config = function()
-      require 'CopilotChat'.setup { model = 'gpt-5' }
+      require 'CopilotChat'.setup { model = 'gpt-5.2' }
       vim.api.nvim_create_autocmd('BufEnter', {
         pattern = { 'copilot-chat' },
         callback = function() vim.wo.wrap = true end,
