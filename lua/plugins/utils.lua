@@ -1,5 +1,6 @@
 return {
   'tpope/vim-abolish',
+  'tpope/vim-speeddating',
   'stefandtw/quickfix-reflector.vim' ,
   {
     '73/vim-klog',
