@@ -1,22 +1,12 @@
+local localrt = vim.fn.finddir('.vimrt', ';')
 return {
   'saghen/blink.cmp',
   dependencies = 'rafamadriz/friendly-snippets',
-
-  version = '*',
-  ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
+  version = '1.*',
   opts = {
-    keymap = { preset = 'default' },
-
-    appearance = {
-      nerd_font_variant = 'mono'
-    },
-
-    sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
-    },
-
-    fuzzy = { implementation = 'prefer_rust' },
+    sources = { providers = { snippets = { opts = {
+      search_paths = localrt ~= '' and { localrt .. '/snippets' } or {}
+    }}}},
   },
   opts_extend = { 'sources.default' }
 }
