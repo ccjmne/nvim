@@ -7,6 +7,14 @@ return {
       vim.g.gitgutter_preview_win_floating = 0
       vim.g.gitgutter_highlight_linenrs = 1
       vim.g.gitgutter_signs = 0
+      vim.cmd [[
+        nmap [h <Plug>(GitGutterPrevHunk)
+        nmap ]h <Plug>(GitGutterNextHunk)
+        omap ih <Plug>(GitGutterTextObjectInnerPending)
+        omap ah <Plug>(GitGutterTextObjectOuterPending)
+        xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+        xmap ah <Plug>(GitGutterTextObjectOuterVisual)
+      ]]
     end,
   },
   {
