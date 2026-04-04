@@ -48,7 +48,7 @@ return {
         -- TODO: Also switch between Co-authored-by, Signed-off-by, Reviewed-by, Acked-by, etc.
         -- TODO: Also find people from these trailers
         local trailers = { 'Signed-off-by', 'Reviewed-by', 'Acked-by', 'Tested-by', 'Reported-by', 'Suggested-by', 'Co-developed-by', 'Co-authored-by' }
-        local fmt = '%an <%aE>%n%cn <%cE>%n' .. table.concat(vim.tbl_map(function(t) return '%(trailers:key=' .. t .. ',valueonly)' end, trailers), '%n')
+        local fmt = '%aN <%aE>%n%cN <%cE>%n' .. table.concat(vim.tbl_map(function(t) return '%(trailers:key=' .. t .. ',valueonly)' end, trailers), '%n')
         local gitdir = vim.fn.fnamemodify(vim.fn.finddir('.git', '.;'), ':p:h')
         require 'fzf-lua'.fzf_exec("git --git-dir=" .. gitdir .. " log --pretty='" .. fmt .. "' --all | awk '$0 && !M[$0]++'", {
           prompt = 'Contributors> ',
