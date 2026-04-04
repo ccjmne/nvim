@@ -45,9 +45,12 @@ vim.cmd [[
   nmap y<C-G> <CMD>call setreg(v:register, exists('*fugitive#Object') ? fugitive#Object(expand('%')) : expand('%'))<CR>
 ]]
 
-vim.keymap.set('n', '<Leader>x', [[:.lua<CR>]])
-vim.keymap.set('v', '<Leader>x', [[:lua<CR>]])
-vim.keymap.set('n', '<Leader>z', [[:<C-R><C-L><CR>]])
+vim.cmd [[
+  nmap <Leader>x :.lua<CR>
+  vmap <Leader>x :lua<CR>
+  nmap <Leader>X :!%<CR>
+  nmap <Leader>z :<C-R><C-L><CR>
+]]
 
 vim.keymap.set('n', '<Esc>', '<CMD>nohl<CR><CMD>lcl<CR><CMD>ccl<CR><CMD>pc<CR>')
 
