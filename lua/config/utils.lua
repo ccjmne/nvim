@@ -48,7 +48,6 @@ vim.cmd [[
 vim.keymap.set('n', '<Leader>x', [[:.lua<CR>]])
 vim.keymap.set('v', '<Leader>x', [[:lua<CR>]])
 vim.keymap.set('n', '<Leader>z', [[:<C-R><C-L><CR>]])
-vim.keymap.set('v', '<Leader>z', [[:let @v = join(getline("'<", "'>"), "\n")<CR>:@v<CR>]])
 
 vim.keymap.set('n', '<Esc>', '<CMD>nohl<CR><CMD>lcl<CR><CMD>ccl<CR><CMD>pc<CR>')
 
