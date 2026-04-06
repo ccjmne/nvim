@@ -1,3 +1,5 @@
+-- TODO: CONSIDER JUNEGUNN's OWN VIM PLUGIN FOR FZF
+-- Also consume https://thevaluable.dev/fzf-vim-integration/
 return {
   -- TODO: Check out "profiles" and set up my own
   'ibhagwan/fzf-lua',
@@ -30,6 +32,47 @@ return {
     { '<Leader>fq', function() require 'fzf-lua'.quickfix {} end },
     { '<Leader>fl', function() require 'fzf-lua'.loclist {} end },
     { 'z=',         function() require 'fzf-lua'.spell_suggest {} end },
+
+    {
+      '<Leader>fs',
+      function()
+        local api = require('fzf-lua')
+        local opts = {
+          ['--delimiter'] = ',',
+          ['--with-nth'] = '{1}',
+          ['--header'] = '[Complete thesaurus]',
+        }
+        local v = vim.fn.mode():match('[vV]')
+        if v then
+          vim.cmd 'norm "zygv'
+          local q = vim.fn.getreg('z')
+          if q then opts['--query'] = q:lower() end
+        end
+        api.fzf_exec('cat ' .. vim.fn.stdpath('data') .. '/mthesaur.txt', {
+          preview = 'echo {} | tr , "\n" | tail +2 | shuf | COLUMNS=$FZF_PREVIEW_COLUMNS column',
+          fzf_opts = opts,
+          keymap = {
+            fzf = {
+              enter = 'transform:' .. api.shell.stringify_data(function(items)
+                if items[1] and items[1]:match(',') then
+                  return string.format(
+                    'clear-query+hide-preview+reload(echo {} | tr , "\n" | tail +2 | shuf)+change-header:[Thesaurus for: "%s"]',
+                    items[1]:match('[^,]+')
+                  )
+                end
+                api.utils.fzf_exit()
+                if not items[1] then return end
+                if v then vim.cmd('norm gvc' .. items[1])
+                else      vim.api.nvim_put(items, 'c', true, true)
+                end
+              end, {}, '{}')
+            }
+          }
+        })
+      end,
+      mode = { 'n', 'v' }
+    },
+
     {
       '<Leader>fd',
       function()
