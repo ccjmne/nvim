@@ -52,6 +52,8 @@ vim.cmd [[
   nmap <Leader>z :<C-R><C-L><CR>
 ]]
 
+vim.cmd 'nmap <C-M-t> :tag<CR>'
+
 vim.keymap.set('n', '<Esc>', '<CMD>nohl<CR><CMD>lcl<CR><CMD>ccl<CR><CMD>pc<CR>')
 
 vim.diagnostic.config { virtual_text = true }
