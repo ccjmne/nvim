@@ -7,7 +7,7 @@ return {
   keys = {
     { '<Leader>ff', function() require 'fzf-lua'.files {} end },
     { '<Leader>fn', function() require 'fzf-lua'.files { cwd = vim.fn.stdpath 'config' } end },
-    { '<Leader>f,', function() require 'fzf-lua'.files { cwd = vim.env.HOME .. '/git/dotfiles2025' } end },
+    { '<Leader>f,', function() require 'fzf-lua'.files { cwd = vim.env.HOME .. '/git/dotfiles' } end },
     { '<Leader> ',  function() require 'fzf-lua'.buffers {} end },
     { '<Leader>-',  function() require 'fzf-lua'.oldfiles {} end },
     { '<Leader>f"', function() require 'fzf-lua'.registers {} end },
