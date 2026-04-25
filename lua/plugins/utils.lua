@@ -2,6 +2,7 @@ return {
   'tpope/vim-abolish',
   'tpope/vim-speeddating',
   'stefandtw/quickfix-reflector.vim' ,
+  'hiphish/jinja.vim',
   {
     '73/vim-klog',
     config = function()
