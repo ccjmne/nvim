@@ -1,8 +1,8 @@
 vim.diagnostic.config({
-  float = { source = true },
-  severity_sort = true,
-  signs = true, -- gutter signs
-  underline = false,
+  float            = { source = true },
+  severity_sort    = true,
+  signs            = true, -- gutter signs
+  underline        = false,
   update_in_insert = false,
 })
 
@@ -19,11 +19,15 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
-        javascript = { 'eslint_d' },
-        typescript = { 'eslint_d' },
-        -- svelte = { 'eslint_d' },
-        json = { 'eslint_d' },
+        css             = { 'stylelint' },
+        javascript      = { 'eslint_d' },
+        json            = { 'eslint_d' },
+        jsonc           = { 'eslint_d' },
+        markdown        = { 'markdownlint' },
+        scss            = { 'stylelint' },
+        svelte          = { 'eslint_d' },
+        typescript      = { 'eslint_d' },
+        typescriptreact = { 'eslint_d' },
       }
 
       local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
