@@ -27,12 +27,27 @@ return {
         },
       })
 
+      vim.lsp.config('perlnavigator', {
+        cmd = { "perlnavigator" },
+        settings = {
+          perlnavigator = {
+            perlPath = "perl",
+            includePaths = {
+              "$workspaceFolder/t",
+              "$workspaceFolder/bin",
+              "$workspaceFolder/lib",
+            },
+          },
+        },
+      })
+
       vim.lsp.enable { -- TODO: use blink's capabilities
         'bashls',
         'clangd',
         'css_variables',
         'glslls', -- TODO: cmd = { 'glslls', '--stdin', '--target-env', 'opengl' }
         'lua_ls',
+        'perlnavigator',
         'rust_analyzer',
         'somesass_ls',
         'svelte',
